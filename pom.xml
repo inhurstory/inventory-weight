@@ -6,7 +6,7 @@
 
     <groupId>me.williamsaada</groupId>
     <artifactId>InventoryWeight</artifactId>
-    <version>2.21.0</version>
+    <version>2.21.1</version>
     <build>
         <defaultGoal>clean validate deploy</defaultGoal>
         <finalName>${project.name}-${project.version}</finalName>
@@ -44,7 +44,7 @@
         <dependency>
             <groupId>me.clip</groupId>
             <artifactId>placeholderapi</artifactId>
-            <version>2.11.1</version>
+            <version>2.11.6</version>
             <scope>provided</scope>
         </dependency>
     </dependencies>

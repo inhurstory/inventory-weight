@@ -4,6 +4,7 @@ import me.wonka01.InventoryWeight.commands.InventoryWeightCommands;
 import me.wonka01.InventoryWeight.configuration.LanguageConfig;
 import me.wonka01.InventoryWeight.events.FreezePlayerEvent;
 import me.wonka01.InventoryWeight.events.JoinEvent;
+import me.wonka01.InventoryWeight.events.PreventJumpEvent;
 import me.wonka01.InventoryWeight.playerweight.ItemLimit;
 import me.wonka01.InventoryWeight.playerweight.PlayerWeight;
 import me.wonka01.InventoryWeight.playerweight.PlayerWeightMap;
@@ -218,6 +219,7 @@ public class InventoryWeight extends JavaPlugin {
     private void registerEvents() {
         getServer().getPluginManager().registerEvents(new JoinEvent(), this);
         getServer().getPluginManager().registerEvents(new FreezePlayerEvent(), this);
+        getServer().getPluginManager().registerEvents(new PreventJumpEvent(), this);
     }
 
     private void setUpMessageConfig() {

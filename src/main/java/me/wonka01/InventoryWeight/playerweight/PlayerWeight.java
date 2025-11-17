@@ -2,6 +2,7 @@ package me.wonka01.InventoryWeight.playerweight;
 
 import me.wonka01.InventoryWeight.configuration.LanguageConfig;
 import me.wonka01.InventoryWeight.events.FreezePlayerEvent;
+import me.wonka01.InventoryWeight.events.PreventJumpEvent;
 import me.wonka01.InventoryWeight.util.WorldList;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
@@ -28,6 +29,7 @@ public class PlayerWeight {
     private boolean isPlayerFrozen;
     private boolean isPlayerOverLimit;
     private boolean isBlind;
+    private boolean isJumpPrevented;
 
     public PlayerWeight(double weight, UUID id) {
         this.weight = weight;
@@ -37,6 +39,7 @@ public class PlayerWeight {
         isPlayerFrozen = false;
         isPlayerOverLimit = false;
         isBlind = false;
+        isJumpPrevented = false;
         changeSpeed();
     }
 
@@ -82,6 +85,7 @@ public class PlayerWeight {
         Player player = Bukkit.getPlayer(playerId);
         if (isPluginDisabledForUserOrWorld(player)) {
             player.setWalkSpeed(0.20f);
+            allowJumpIfBlocked();
             return;
         }
 
@@ -100,6 +104,7 @@ public class PlayerWeight {
                 }
                 isPlayerFrozen = false;
             }
+            allowJumpIfBlocked();
         }
 
         if (blindPlayer && isBlind && player.hasPotionEffect(PotionEffectType.BLINDNESS)) {
@@ -137,6 +142,10 @@ public class PlayerWeight {
 
     private void handleMaxCapacity(Player player) {
         String overlimitMsg = LanguageConfig.getConfig().getMessages().getOverLimitMessage();
+        if (!isJumpPrevented) {
+            PreventJumpEvent.preventJump(playerId);
+            isJumpPrevented = true;
+        }
         if (isPlayerOverLimit && !isPlayerFrozen && overlimitMsg != null && !overlimitMsg.isEmpty()) {
             player.sendMessage(ChatColor.translateAlternateColorCodes('&',
                     overlimitMsg));
@@ -161,6 +170,13 @@ public class PlayerWeight {
             PotionEffect blindness = new PotionEffect(PotionEffectType.BLINDNESS, 1000000, 1);
             player.addPotionEffect(blindness);
             isBlind = true;
+        }
+    }
+
+    private void allowJumpIfBlocked() {
+        if (isJumpPrevented) {
+            PreventJumpEvent.allowJump(playerId);
+            isJumpPrevented = false;
         }
     }
 
