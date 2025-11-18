@@ -6,8 +6,8 @@ weightLimit: 500
 # until their weight decreases.
 disableMovement: false
 
-# If set to true, players that exceed their weight limit will be prevented from jumping
-preventJumpWhenOverWeight: false
+# At what % of the weight limit players should start being prevented from jumping (0.0 - 1.0)
+beginPreventJump: 1.0
 
 # If set to true, upon reaching [weightLimit], the player will be blinded
 # This helps with a spigot issue where players can sprint jump to bypass speed changes

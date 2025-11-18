@@ -21,7 +21,7 @@ public class PlayerWeight {
     private static float maxSpeed;
     private static double beginSlowdown;
     private static boolean blindPlayer;
-    private static boolean preventJumpWhenOverWeight;
+    private static double beginPreventJump;
 
     private double weight;
     private double increasedCapacity;
@@ -45,14 +45,14 @@ public class PlayerWeight {
     }
 
     public static void initialize(boolean disableMovement, int capacity, float min, float max, double bSlowdown,
-            boolean blindAtMax, boolean preventJump) {
+            boolean blindAtMax, double beginPreventJump) {
         PlayerWeight.disableMovement = disableMovement;
         defaultMaxCapacity = capacity;
         minSpeed = min;
         maxSpeed = max;
         beginSlowdown = bSlowdown;
         blindPlayer = blindAtMax;
-        preventJumpWhenOverWeight = preventJump;
+        PlayerWeight.beginPreventJump = beginPreventJump;
     }
 
     public boolean getIsPlayerOverLimit() {
@@ -125,9 +125,8 @@ public class PlayerWeight {
 
         if (weight <= 0 || speedAdjustment >= weight) {
             weightFloat = maxSpeed;
-        }
-
-        player.setWalkSpeed(weightFloat);
+        }        player.setWalkSpeed(weightFloat);
+        updateJumpPrevention(weightRatio);
     }
 
     private boolean isPluginDisabledForUserOrWorld(Player player) {
@@ -144,14 +143,7 @@ public class PlayerWeight {
 
     private void handleMaxCapacity(Player player) {
         String overlimitMsg = LanguageConfig.getConfig().getMessages().getOverLimitMessage();
-        if (preventJumpWhenOverWeight) {
-            if (!isJumpPrevented) {
-                PreventJumpEvent.preventJump(playerId);
-                isJumpPrevented = true;
-            }
-        } else {
-            allowJumpIfBlocked();
-        }
+        updateJumpPrevention(1.0);
         if (isPlayerOverLimit && !isPlayerFrozen && overlimitMsg != null && !overlimitMsg.isEmpty()) {
             player.sendMessage(ChatColor.translateAlternateColorCodes('&',
                     overlimitMsg));
@@ -185,6 +177,19 @@ public class PlayerWeight {
             isJumpPrevented = false;
         }
     }
+
+    private void updateJumpPrevention(double ratio) {
+        double threshold = Math.max(0.0, Math.min(1.0, beginPreventJump));
+        if (ratio >= threshold) {
+            if (!isJumpPrevented) {
+                PreventJumpEvent.preventJump(playerId);
+                isJumpPrevented = true;
+            }
+        } else {
+            allowJumpIfBlocked();
+        }
+    }
+
 
     public String getSpeedDisplay() {
         StringBuilder speedDisplay = new StringBuilder();

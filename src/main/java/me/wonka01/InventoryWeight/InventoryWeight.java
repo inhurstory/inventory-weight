@@ -119,7 +119,6 @@ public class InventoryWeight extends JavaPlugin {
 
         boolean disableMovement = getConfig().getBoolean("disableMovement");
         boolean blindPlayer = getConfig().getBoolean("blindAtMax");
-        boolean preventJumpWhenOverWeight = getConfig().getBoolean("preventJumpWhenOverWeight", false);
         int capacity = getConfig().getInt("weightLimit");
         boolean armorOnly = getConfig().getBoolean("armorOnly");
         InventoryCheckUtil.armorOnlyMode = armorOnly;
@@ -128,6 +127,7 @@ public class InventoryWeight extends JavaPlugin {
         float maxWeight = (float) getConfig().getDouble("maxWalkSpeed");
 
         double beginSlowdown = getConfig().getDouble("beginSlowdown", 0.0);
+        double beginPreventJump = getConfig().getDouble("beginPreventJump", 1.0);
 
         List<?> matWeights = getConfig().getList("materialWeights");
         List<?> nameWeights = getConfig().getList("customItemWeights");
@@ -203,7 +203,7 @@ public class InventoryWeight extends JavaPlugin {
         InventoryCheckUtil.capacityTag = getConfig().getString("capacityTag");
 
         PlayerWeight.initialize(disableMovement, capacity, minWeight, maxWeight, beginSlowdown, blindPlayer,
-                preventJumpWhenOverWeight);
+                beginPreventJump);
 
         List<String> worlds = getConfig().getStringList("worlds");
         WorldList.initializeWorldList(worlds);
