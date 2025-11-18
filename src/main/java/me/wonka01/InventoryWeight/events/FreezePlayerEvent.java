@@ -15,7 +15,7 @@ public class FreezePlayerEvent implements Listener {
 
     @EventHandler
     public void onPlayerMove(PlayerMoveEvent e) {
-        if (!WorldList.getInstance().isInventoryWeightEnabled(e.getPlayer().getWorld().toString())) {
+        if (!WorldList.getInstance().isInventoryWeightEnabled(e.getPlayer().getWorld().getName())) {
             return;
         }
 
