@@ -184,7 +184,7 @@ public class PlayerWeight {
         isPlayerFrozen = true;
 
         if (blindPlayer) {
-            PotionEffect blindness = new PotionEffect(PotionEffectType.BLINDNESS, 1000000, 1);
+            PotionEffect blindness = new PotionEffect(PotionEffectType.BLINDNESS, 200, 1);
             player.addPotionEffect(blindness);
             isBlind = true;
         }
