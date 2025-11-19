@@ -196,3 +196,9 @@ The Inventory Weight plugin provides a flexible system for managing player inven
 For more information or to download the plugin, visit the [plugin page](https://www.spigotmc.org/resources/inventory-weight-1-12-1-21.70929/).
 
 ---
+
+## Custom Feature
+
+- **Jump Blocking Without Full Freeze** – `config.yml` exposes `beginPreventJump`, letting you decide the exact load percentage (0.0–1.0) at which players lose the ability to jump.
+- **Threshold Warnings** – `messages.yml` now contains `slowdownWarningMessage` and `preventJumpWarningMessage`; players receive a one-time chat warning the first time they cross each threshold, and the warning resets once they drop below it.
+- **Bug fix** – Freeze behavior now respects the `worlds` list by comparing the actual world names, so movement locking only happens in worlds where the feature is enabled.
