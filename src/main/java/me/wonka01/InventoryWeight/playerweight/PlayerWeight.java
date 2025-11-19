@@ -31,6 +31,8 @@ public class PlayerWeight {
     private boolean isPlayerOverLimit;
     private boolean isBlind;
     private boolean isJumpPrevented;
+    private boolean hasShownSlowdownWarning;
+    private boolean hasShownJumpWarning;
 
     public PlayerWeight(double weight, UUID id) {
         this.weight = weight;
@@ -41,6 +43,8 @@ public class PlayerWeight {
         isPlayerOverLimit = false;
         isBlind = false;
         isJumpPrevented = false;
+        hasShownSlowdownWarning = false;
+        hasShownJumpWarning = false;
         changeSpeed();
     }
 
@@ -86,8 +90,12 @@ public class PlayerWeight {
     public void changeSpeed() {
         Player player = Bukkit.getPlayer(playerId);
         if (isPluginDisabledForUserOrWorld(player)) {
-            player.setWalkSpeed(0.20f);
+            if (player != null) {
+                player.setWalkSpeed(0.20f);
+            }
             allowJumpIfBlocked();
+            hasShownSlowdownWarning = false;
+            hasShownJumpWarning = false;
             return;
         }
 
@@ -125,8 +133,18 @@ public class PlayerWeight {
 
         if (weight <= 0 || speedAdjustment >= weight) {
             weightFloat = maxSpeed;
-        }        player.setWalkSpeed(weightFloat);
-        updateJumpPrevention(weightRatio);
+        }
+
+        double maxCarryWeight = this.getMaxWeight();
+        double absoluteRatio = 0.0;
+        if (maxCarryWeight > 0) {
+            absoluteRatio = weight / maxCarryWeight;
+        }
+        absoluteRatio = clampToPercentage(absoluteRatio);
+
+        player.setWalkSpeed(weightFloat);
+        updateThresholdWarnings(player, absoluteRatio);
+        updateJumpPrevention(absoluteRatio);
     }
 
     private boolean isPluginDisabledForUserOrWorld(Player player) {
@@ -137,16 +155,17 @@ public class PlayerWeight {
             return true;
         } else if (player.getGameMode().equals(GameMode.CREATIVE)) {
             return true;
-        } else
+        } else {
             return !(worldList.isInventoryWeightEnabled(player.getWorld().getName()));
+        }
     }
 
     private void handleMaxCapacity(Player player) {
         String overlimitMsg = LanguageConfig.getConfig().getMessages().getOverLimitMessage();
         updateJumpPrevention(1.0);
+        updateThresholdWarnings(player, 1.0);
         if (isPlayerOverLimit && !isPlayerFrozen && overlimitMsg != null && !overlimitMsg.isEmpty()) {
-            player.sendMessage(ChatColor.translateAlternateColorCodes('&',
-                    overlimitMsg));
+            player.sendMessage(ChatColor.translateAlternateColorCodes('&', overlimitMsg));
             player.setWalkSpeed(minSpeed);
         }
 
@@ -178,8 +197,43 @@ public class PlayerWeight {
         }
     }
 
+    private void updateThresholdWarnings(Player player, double absoluteRatio) {
+        if (player == null) {
+            return;
+        }
+        double slowdownThreshold = clampToPercentage(beginSlowdown);
+        if (beginSlowdown > 0.0) {
+            if (absoluteRatio >= slowdownThreshold) {
+                if (!hasShownSlowdownWarning) {
+                    String message = LanguageConfig.getConfig().getMessages().getSlowdownWarningMessage();
+                    if (message != null && !message.isEmpty()) {
+                        player.sendMessage(ChatColor.translateAlternateColorCodes('&', message));
+                    }
+                    hasShownSlowdownWarning = true;
+                }
+            } else {
+                hasShownSlowdownWarning = false;
+            }
+        } else {
+            hasShownSlowdownWarning = false;
+        }
+
+        double jumpWarningThreshold = clampToPercentage(beginPreventJump);
+        if (absoluteRatio >= jumpWarningThreshold) {
+            if (!hasShownJumpWarning) {
+                String message = LanguageConfig.getConfig().getMessages().getPreventJumpWarningMessage();
+                if (message != null && !message.isEmpty()) {
+                    player.sendMessage(ChatColor.translateAlternateColorCodes('&', message));
+                }
+                hasShownJumpWarning = true;
+            }
+        } else {
+            hasShownJumpWarning = false;
+        }
+    }
+
     private void updateJumpPrevention(double ratio) {
-        double threshold = Math.max(0.0, Math.min(1.0, beginPreventJump));
+        double threshold = clampToPercentage(beginPreventJump);
         if (ratio >= threshold) {
             if (!isJumpPrevented) {
                 PreventJumpEvent.preventJump(playerId);
@@ -190,6 +244,15 @@ public class PlayerWeight {
         }
     }
 
+    private double clampToPercentage(double value) {
+        if (value < 0.0) {
+            return 0.0;
+        }
+        if (value > 1.0) {
+            return 1.0;
+        }
+        return value;
+    }
 
     public String getSpeedDisplay() {
         StringBuilder speedDisplay = new StringBuilder();
@@ -224,3 +287,5 @@ public class PlayerWeight {
         }
     }
 }
+
+

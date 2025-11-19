@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>me.williamsaada</groupId>
-    <artifactId>InventoryWeight</artifactId>
+    <artifactId>InventoryWeight-ihsCustom</artifactId>
     <version>2.21.1</version>
     <build>
         <defaultGoal>clean validate deploy</defaultGoal>

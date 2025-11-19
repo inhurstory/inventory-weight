@@ -55,6 +55,8 @@ public class LanguageConfig {
         String cantMove = yamlConfiguration.getString("cantMoveMessage");
         String overlimit = yamlConfiguration.getString("overLimitMessage");
         String overWeight = yamlConfiguration.getString("overWeightMessage");
+        String slowdownWarning = yamlConfiguration.getString("slowdownWarningMessage");
+        String preventJumpWarning = yamlConfiguration.getString("preventJumpWarningMessage");
         if (cantMove == null || cantMove.isEmpty()) {
             cantMove = "&cYou can't carry your weight anymore, you're going to need to drop some items!";
         }
@@ -66,8 +68,17 @@ public class LanguageConfig {
             overWeight = "&cYou're over your weight limit!";
         }
 
+        if (slowdownWarning == null) {
+            slowdownWarning = "&eYou're starting to feel your pack weighing you down.";
+        }
+
+        if (preventJumpWarning == null) {
+            preventJumpWarning = "&cYou are too heavy to jump!";
+        }
+
         messages = new MessagesModel(noPermission, invalidCommand, invalidMaterial, itemWeight,
-                weight, speed, reloadCommand, helpMessage, cantMove, overlimit, overWeight);
+                weight, speed, reloadCommand, helpMessage, cantMove, overlimit, overWeight, slowdownWarning, preventJumpWarning);
         config = this;
     }
 }
+

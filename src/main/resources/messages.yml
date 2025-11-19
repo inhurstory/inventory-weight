@@ -9,6 +9,8 @@ speed: '&eSpeed'
 reloadCommand: '&AThe configuration has been reloaded successfully!'
 cantMoveMessage: "&cYou can't carry your weight anymore, you're going to need to drop some items!"
 overWeightMessage: "&cYou're carrying too much weight, you're going to need to drop some items!"
+slowdownWarningMessage: "&eYou're starting to feel your pack weighing you down."
+preventJumpWarningMessage: "&cYou are too heavy to jump!"
 helpMessage:
   "&eWelcome to the Inventory Weight Plugin! This plugin tracks the weight of items in your inventory and adjusts your movement speed based on the total weight you're carrying.
   You can customize item weights, set limits, and much more. Here are some useful commands to get started:
