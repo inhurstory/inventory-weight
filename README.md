@@ -197,8 +197,33 @@ For more information or to download the plugin, visit the [plugin page](https://
 
 ---
 
-## Custom Feature
+---
 
-- **Jump Blocking Without Full Freeze** – `config.yml` exposes `beginPreventJump`, letting you decide the exact load percentage (0.0–1.0) at which players lose the ability to jump.
-- **Threshold Warnings** – `messages.yml` now contains `slowdownWarningMessage` and `preventJumpWarningMessage`; players receive a one-time chat warning the first time they cross each threshold, and the warning resets once they drop below it.
-- **Bug fix** – Freeze behavior now respects the `worlds` list by comparing the actual world names, so movement locking only happens in worlds where the feature is enabled.
+# Custom Features
+
+## **Jump Blocking Without Full Freeze**
+- **`beginPreventJump`**: Sets the load percentage (from 0.0 to 1.0) at which player jumping is disabled, allowing for jump restrictions without completely freezing the player.
+
+## **Threshold Warnings**
+- **`slowdownWarningMessage`**: Sends a one-time alert to the player when their inventory weight crosses the slowdown threshold.
+- **`preventJumpWarningMessage`**: Sends a one-time alert when the jump prevention threshold is crossed.
+- Both warnings will reset once the player's weight drops back below the respective thresholds.
+
+## **World-Aware Freeze Fix**
+- Movement locking functionality now correctly respects the `worlds` list configured in `config.yml`. Players will only be frozen in the specified worlds, fixing behavior in multi-world environments.
+
+## **Level-Based Max Weight**
+- **`leveling`**: Enables a per-player maximum weight scaling system. The formula applied is `weightLimit * (1 + multiplier)^level`.
+- The player's level defaults to 1. The multiplier is set via `multiplierPerLevel`. Player levels are automatically saved.
+- If a player has the `inventoryweight.maxweight.X` permission, the value `X` is used as the base weight limit for the calculation.
+
+## **Level Persistence and Commands**
+- Player levels are saved and persisted in the `player-levels.yml` file.
+- **`/iw level`**: Allows a player to check their current weight bonus.
+- **`/iw level set|add <player> <value>`**: Allows administrators to set or add to a player's level. This command includes tab completion for subcommands and online player names.
+
+## **New Placeholders**
+- The following new PlaceHolderAPI placeholders are available:
+  - **`%inventoryweight_level%`**: Displays the player's current level.
+  - **`%inventoryweight_multiplier%`**: Displays the current weight multiplier.
+- The existing `%inventoryweight_weight%` and `%inventoryweight_maxweight%` placeholders now account for the scaled max weight based on the player's level.

@@ -57,6 +57,11 @@ public class LanguageConfig {
         String overWeight = yamlConfiguration.getString("overWeightMessage");
         String slowdownWarning = yamlConfiguration.getString("slowdownWarningMessage");
         String preventJumpWarning = yamlConfiguration.getString("preventJumpWarningMessage");
+        String levelInfo = yamlConfiguration.getString("levelInfo");
+        String levelSet = yamlConfiguration.getString("levelSet");
+        String levelAdd = yamlConfiguration.getString("levelAdd");
+        String levelingDisabledMessage = yamlConfiguration.getString("levelingDisabledMessage");
+        String invalidPlayer = yamlConfiguration.getString("invalidPlayer");
         if (cantMove == null || cantMove.isEmpty()) {
             cantMove = "&cYou can't carry your weight anymore, you're going to need to drop some items!";
         }
@@ -75,10 +80,25 @@ public class LanguageConfig {
         if (preventJumpWarning == null) {
             preventJumpWarning = "&cYou are too heavy to jump!";
         }
+        if (levelInfo == null || levelInfo.isEmpty()) {
+            levelInfo = "&eLevel: %level% | Multiplier: %multiplier% | Max Weight: %max%";
+        }
+        if (levelSet == null || levelSet.isEmpty()) {
+            levelSet = "&aSet %player%'s level to %level%.";
+        }
+        if (levelAdd == null || levelAdd.isEmpty()) {
+            levelAdd = "&aAdjusted %player%'s level. New level: %level%.";
+        }
+        if (levelingDisabledMessage == null || levelingDisabledMessage.isEmpty()) {
+            levelingDisabledMessage = "&cLeveling system is disabled.";
+        }
+        if (invalidPlayer == null || invalidPlayer.isEmpty()) {
+            invalidPlayer = "&cThat player could not be found.";
+        }
 
         messages = new MessagesModel(noPermission, invalidCommand, invalidMaterial, itemWeight,
-                weight, speed, reloadCommand, helpMessage, cantMove, overlimit, overWeight, slowdownWarning, preventJumpWarning);
+                weight, speed, reloadCommand, helpMessage, cantMove, overlimit, overWeight, slowdownWarning,
+                preventJumpWarning, levelInfo, levelSet, levelAdd, levelingDisabledMessage, invalidPlayer);
         config = this;
     }
 }
-

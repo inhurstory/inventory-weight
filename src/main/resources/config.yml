@@ -40,6 +40,13 @@ armorOnly: false
 # Sets the default weight for all items not specified
 defaultWeight: 1
 
+# Level-based weight scaling
+leveling:
+  enabled: true
+  defaultLevel: 1
+  multiplierPerLevel: 0.2
+  maxLevel: 20
+
 # List of materials and their weights, if a material is not listed then it assumes the default value
 # list of materials can be found here: https://hub.spigotmc.org/javadocs/spigot/org/bukkit/Material.html
 

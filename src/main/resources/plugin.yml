@@ -10,7 +10,7 @@ commands:
   inventoryweight:
     aliases: iw
     description: Commands for Inventory Weight Plugin
-    usage: /iw [help, weight, get] are the available commands
+    usage: /iw [help, weight, get, level] are the available commands
 
 permissions:
   inventoryweight.reload:
@@ -19,3 +19,9 @@ permissions:
   inventoryweight.off:
     description: If this is set a player will not have their weight monitored or their speed changed
     default: false
+  inventoryweight.level.set:
+    description: Set a player's inventory weight level
+    default: op
+  inventoryweight.level.add:
+    description: Add to a player's inventory weight level
+    default: op

@@ -15,12 +15,18 @@ public class MessagesModel {
     private String overWeightMessage;
     private String slowdownWarningMessage;
     private String preventJumpWarningMessage;
+    private String levelInfo;
+    private String levelSet;
+    private String levelAdd;
+    private String levelingDisabledMessage;
+    private String invalidPlayer;
 
     // TODO - make this a map instead of an object
     public MessagesModel(String noPermission, String invalidCommand, String invalidMaterial, String itemWeight,
             String weight, String speed, String reloadCommand, String helpMessage, String cantMoveMessage,
             String overLimitMessage, String overWeightMessage, String slowdownWarningMessage,
-            String preventJumpWarningMessage) {
+            String preventJumpWarningMessage, String levelInfo, String levelSet, String levelAdd,
+            String levelingDisabledMessage, String invalidPlayer) {
         this.noPermission = noPermission;
         this.invalidCommand = invalidCommand;
         this.invalidMaterial = invalidMaterial;
@@ -34,6 +40,11 @@ public class MessagesModel {
         this.overWeightMessage = overWeightMessage;
         this.slowdownWarningMessage = slowdownWarningMessage;
         this.preventJumpWarningMessage = preventJumpWarningMessage;
+        this.levelInfo = levelInfo;
+        this.levelSet = levelSet;
+        this.levelAdd = levelAdd;
+        this.levelingDisabledMessage = levelingDisabledMessage;
+        this.invalidPlayer = invalidPlayer;
     }
 
     public String getNoPermission() {
@@ -86,5 +97,25 @@ public class MessagesModel {
 
     public String getPreventJumpWarningMessage() {
         return preventJumpWarningMessage;
+    }
+
+    public String getLevelInfo() {
+        return levelInfo;
+    }
+
+    public String getLevelSet() {
+        return levelSet;
+    }
+
+    public String getLevelAdd() {
+        return levelAdd;
+    }
+
+    public String getLevelingDisabledMessage() {
+        return levelingDisabledMessage;
+    }
+
+    public String getInvalidPlayer() {
+        return invalidPlayer;
     }
 }

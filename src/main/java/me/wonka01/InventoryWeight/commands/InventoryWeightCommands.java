@@ -2,6 +2,7 @@ package me.wonka01.InventoryWeight.commands;
 
 import me.wonka01.InventoryWeight.InventoryWeight;
 import me.wonka01.InventoryWeight.configuration.LanguageConfig;
+import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
@@ -28,6 +29,7 @@ public class InventoryWeightCommands implements CommandExecutor, TabCompleter {
         subCommands.put("help", new HelpCommand());
         subCommands.put("get", new GetWeightCommand());
         subCommands.put("reload", new ReloadCommand());
+        subCommands.put("level", new LevelCommand());
     }
 
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
@@ -55,6 +57,19 @@ public class InventoryWeightCommands implements CommandExecutor, TabCompleter {
             for (String sub : subCommands.keySet()) {
                 if (sub.startsWith(args[0].toLowerCase())) {
                     completions.add(sub);
+                }
+            }
+        } else if (args.length == 2 && "level".equalsIgnoreCase(args[0])) {
+            if ("set".startsWith(args[1].toLowerCase())) {
+                completions.add("set");
+            }
+            if ("add".startsWith(args[1].toLowerCase())) {
+                completions.add("add");
+            }
+        } else if (args.length == 3 && "level".equalsIgnoreCase(args[0])) {
+            for (Player online : Bukkit.getOnlinePlayers()) {
+                if (online.getName().toLowerCase().startsWith(args[2].toLowerCase())) {
+                    completions.add(online.getName());
                 }
             }
         }

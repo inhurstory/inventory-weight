@@ -26,7 +26,10 @@ public class PlayerWeight {
     private double weight;
     private double increasedCapacity;
     private UUID playerId;
-    private int maxCapacity;
+    private double baseMaxCapacity;
+    private double maxCapacity;
+    private int level;
+    private double levelMultiplier;
     private boolean isPlayerFrozen;
     private boolean isPlayerOverLimit;
     private boolean isBlind;
@@ -37,7 +40,10 @@ public class PlayerWeight {
     public PlayerWeight(double weight, UUID id) {
         this.weight = weight;
         this.playerId = id;
+        baseMaxCapacity = defaultMaxCapacity;
         maxCapacity = defaultMaxCapacity;
+        level = 1;
+        levelMultiplier = 0.0;
         increasedCapacity = 0.0;
         isPlayerFrozen = false;
         isPlayerOverLimit = false;
@@ -83,8 +89,29 @@ public class PlayerWeight {
         return maxCapacity + increasedCapacity;
     }
 
-    public void setMaxWeight(int max) {
+    public int getLevel() {
+        return level;
+    }
+
+    public void setMaxWeight(double max) {
         maxCapacity = max;
+        baseMaxCapacity = max;
+        level = 0;
+        levelMultiplier = 0.0;
+    }
+
+    public void applyLevelScaling(double baseCapacity, int level, double multiplierPerLevel) {
+        this.baseMaxCapacity = baseCapacity;
+        this.level = level;
+        this.levelMultiplier = multiplierPerLevel;
+        maxCapacity = baseCapacity * Math.pow(1 + multiplierPerLevel, level);
+    }
+
+    public void applyLevelData(double baseCapacity, int level, double multiplierPerLevel, double effectiveCapacity) {
+        this.baseMaxCapacity = baseCapacity;
+        this.level = level;
+        this.levelMultiplier = multiplierPerLevel;
+        this.maxCapacity = effectiveCapacity;
     }
 
     public void changeSpeed() {

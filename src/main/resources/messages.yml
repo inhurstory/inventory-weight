@@ -18,7 +18,15 @@ helpMessage:
   &7- &a/iw weight &f- Check your current inventory weight and speed.
   &7- &a/iw get &f- See the weight of the item you're holding.
   &7- &a/iw get [Material Name] &f- Check the default weight of a specific material.
+  &7- &a/iw level &f- Check your leveling bonus to max weight.
+  &7- &a/iw level set <player> <level> &f- Set a player's level (admin).
+  &7- &a/iw level add <player> <delta> &f- Add to a player's level (admin).
   &7- &a/iw reload &f- Reload the plugin configuration.
 
   &eManage your inventory wisely to avoid slowing down or being unable to move!"
 overLimitMessage: '&cYou are carrying too much, you need to drop something!'
+levelInfo: '&eLevel: &a%level% &7| &eMultiplier: &a%multiplier% &7| &eMax Weight: &a%max%'
+levelSet: '&aSet %player%''s level to %level%.'
+levelAdd: '&aAdjusted %player%''s level. New level: %level%.'
+levelingDisabledMessage: '&cLeveling system is disabled.'
+invalidPlayer: '&cThat player could not be found.'

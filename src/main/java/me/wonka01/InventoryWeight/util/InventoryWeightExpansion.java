@@ -1,6 +1,8 @@
 package me.wonka01.InventoryWeight.util;
 
+import me.wonka01.InventoryWeight.InventoryWeight;
 import me.clip.placeholderapi.expansion.PlaceholderExpansion;
+import me.wonka01.InventoryWeight.playerweight.PlayerLevelManager;
 import me.wonka01.InventoryWeight.playerweight.PlayerWeight;
 import me.wonka01.InventoryWeight.playerweight.PlayerWeightMap;
 import org.bukkit.OfflinePlayer;
@@ -32,6 +34,8 @@ public class InventoryWeightExpansion extends PlaceholderExpansion {
 
     @Override
     public String onRequest(OfflinePlayer player, String identifier) {
+        InventoryWeight plugin = InventoryWeight.getPlugin(InventoryWeight.class);
+        PlayerLevelManager levelManager = plugin.getLevelManager();
 
         if (identifier.equals("weight")) {
             if (PlayerWeightMap.getPlayerWeightMap().containsKey(player.getUniqueId())) {
@@ -76,6 +80,18 @@ public class InventoryWeightExpansion extends PlaceholderExpansion {
                 return weight.getSpeedDisplay();
             }
             return "";
+        }
+        if (identifier.equals("level")) {
+            if (levelManager != null && levelManager.isEnabled()) {
+                return String.valueOf(levelManager.getLevel(player.getUniqueId()));
+            }
+            return "0";
+        }
+        if (identifier.equals("multiplier")) {
+            if (levelManager != null && levelManager.isEnabled()) {
+                return String.valueOf(levelManager.getMultiplierPerLevel());
+            }
+            return "0";
         }
         return null;
     }

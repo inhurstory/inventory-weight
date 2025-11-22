@@ -6,6 +6,7 @@ import me.wonka01.InventoryWeight.events.FreezePlayerEvent;
 import me.wonka01.InventoryWeight.events.JoinEvent;
 import me.wonka01.InventoryWeight.events.PreventJumpEvent;
 import me.wonka01.InventoryWeight.playerweight.ItemLimit;
+import me.wonka01.InventoryWeight.playerweight.PlayerLevelManager;
 import me.wonka01.InventoryWeight.playerweight.PlayerWeight;
 import me.wonka01.InventoryWeight.playerweight.PlayerWeightMap;
 import me.wonka01.InventoryWeight.util.InventoryCheckUtil;
@@ -33,6 +34,7 @@ public class InventoryWeight extends JavaPlugin {
 
     private InventoryWeightCommands commands;
     private LanguageConfig languageConfig;
+    private PlayerLevelManager levelManager;
 
     @Override
     public void onEnable() {
@@ -48,6 +50,7 @@ public class InventoryWeight extends JavaPlugin {
         saveDefaultConfig();
         initConfig();
         setUpMessageConfig();
+        setUpLevelingConfig();
 
         BukkitScheduler scheduler = getServer().getScheduler();
         int timer = getConfig().getInt("checkInventoryTime");
@@ -67,10 +70,14 @@ public class InventoryWeight extends JavaPlugin {
                     Server server = getServer();
                     if (server.getPlayer(playerId) != null) {
                         Player player = server.getPlayer(playerId);
-                        int maxWeight = getMaxWeightPerm(player);
-                        if (maxWeight != -1) {
-                            playerWeight.setMaxWeight(maxWeight);
+                        double baseWeightLimit = getBaseWeightLimit(player);
+                        double effectiveMaxWeight = baseWeightLimit;
+                        int level = 1;
+                        if (levelManager != null && levelManager.isEnabled()) {
+                            effectiveMaxWeight = levelManager.getEffectiveMaxWeight(playerId, baseWeightLimit);
+                            level = levelManager.getLevel(playerId);
                         }
+                        playerWeight.applyLevelData(baseWeightLimit, level, getLevelMultiplier(), effectiveMaxWeight);
                         Inventory inv = player.getInventory();
 
                         if (inv != null) {
@@ -113,6 +120,9 @@ public class InventoryWeight extends JavaPlugin {
     @Override
     public void onDisable() {
         getLogger().info("onDisable is called!");
+        if (levelManager != null) {
+            levelManager.shutdown();
+        }
     }
 
     private void initConfig() {
@@ -229,9 +239,41 @@ public class InventoryWeight extends JavaPlugin {
         languageConfig.setUpLanguageConfig();
     }
 
+    private void setUpLevelingConfig() {
+        if (levelManager != null) {
+            levelManager.shutdown();
+        }
+        boolean enabled = getConfig().getBoolean("leveling.enabled", true);
+        int defaultLevel = getConfig().getInt("leveling.defaultLevel", 1);
+        double multiplierPerLevel = getConfig().getDouble("leveling.multiplierPerLevel", 0.0);
+        int maxLevel = getConfig().getInt("leveling.maxLevel", defaultLevel);
+        levelManager = new PlayerLevelManager(this);
+        levelManager.configure(enabled, defaultLevel, multiplierPerLevel, maxLevel);
+    }
+
     public void reloadConfiguration() {
         reloadConfig();
         setUpMessageConfig();
         initConfig();
+        setUpLevelingConfig();
+    }
+
+    public PlayerLevelManager getLevelManager() {
+        return levelManager;
+    }
+
+    public double getLevelMultiplier() {
+        if (levelManager == null || !levelManager.isEnabled()) {
+            return 0.0;
+        }
+        return levelManager.getMultiplierPerLevel();
+    }
+
+    public int getBaseWeightLimit(Player player) {
+        int fromPerm = getMaxWeightPerm(player);
+        if (fromPerm != -1) {
+            return fromPerm;
+        }
+        return getConfig().getInt("weightLimit");
     }
 }
