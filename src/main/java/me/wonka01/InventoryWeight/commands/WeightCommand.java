@@ -30,10 +30,12 @@ public class WeightCommand implements SubCommand {
         PlayerWeight playerWeight = PlayerWeightMap.getPlayerWeightMap().get(player.getUniqueId());
         DecimalFormat decimalFormatter = new DecimalFormat("#0.00"); // setting the format
         String roundedWeight = decimalFormatter.format(playerWeight.getWeight());
+        String roundedMaxWeight = decimalFormatter.format(playerWeight.getMaxWeight());
+
         player.sendMessage(
                 ChatColor.translateAlternateColorCodes('&', LanguageConfig.getConfig().getMessages().getWeight()
                         + ": &a" + roundedWeight + " &f / &c"
-                        + (playerWeight.getMaxWeight())));
+                        + roundedMaxWeight));
         player.sendMessage(ChatColor.translateAlternateColorCodes('&',
                 LanguageConfig.getConfig().getMessages().getSpeed() + ": &a" + playerWeight.getPercentage() + "%"));
         player.sendMessage(ChatColor.WHITE + "[" + playerWeight.getSpeedDisplay() + ChatColor.WHITE + "]");

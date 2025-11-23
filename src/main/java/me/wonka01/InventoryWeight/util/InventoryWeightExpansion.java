@@ -50,7 +50,8 @@ public class InventoryWeightExpansion extends PlaceholderExpansion {
         if (identifier.equals("maxweight")) {
             if (PlayerWeightMap.getPlayerWeightMap().containsKey(player.getUniqueId())) {
                 PlayerWeight weight = PlayerWeightMap.getPlayerWeightMap().get(player.getUniqueId());
-                return String.valueOf(weight.getMaxWeight());
+                DecimalFormat decimalFormatter = new DecimalFormat("#0.00"); // setting the format
+                return decimalFormatter.format(weight.getMaxWeight());
             }
             return String.valueOf(PlayerWeight.defaultMaxCapacity);
         }
