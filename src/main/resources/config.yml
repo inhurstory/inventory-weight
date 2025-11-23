@@ -44,7 +44,7 @@ defaultWeight: 1
 leveling:
   enabled: true
   defaultLevel: 1
-  multiplierPerLevel: 0.2
+  multiplierPerLevel: 1.5
   maxLevel: 20
 
 # List of materials and their weights, if a material is not listed then it assumes the default value

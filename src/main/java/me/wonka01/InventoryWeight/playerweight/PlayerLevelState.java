@@ -56,6 +56,6 @@ public class PlayerLevelState {
     }
 
     private void recalculate() {
-        cachedEffectiveWeightLimit = baseWeightLimit * Math.pow(1 + multiplierPerLevel, level);
+        cachedEffectiveWeightLimit = baseWeightLimit * Math.pow(multiplierPerLevel, level - 1);
     }
 }
