@@ -26,7 +26,7 @@ beginSlowdown: 0.7
 
 # Time in seconds where the plugin will recalculate each player's weight
 # A lower number results in more frequent updates
-checkInventoryTimer: 2
+checkInventoryTime: 2
 
 # Include names of the worlds you would like to be affected by the plugin.
 # if you would like it to affect every world then leave this empty
