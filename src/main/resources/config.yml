@@ -97,9 +97,9 @@ materialWeights:
   - material: ACACIA_LEAVES
     weight: 0.3
   - material: ACACIA_LOG
-    weight: 8
-  - material: ACACIA_PLANKS
     weight: 2
+  - material: ACACIA_PLANKS
+    weight: 1
   - material: ACACIA_PRESSURE_PLATE
     weight: 0.5
   - material: ACACIA_SAPLING
@@ -113,9 +113,9 @@ materialWeights:
   - material: ACACIA_TRAPDOOR
     weight: 3
   - material: ACACIA_WOOD
-    weight: 8
+    weight: 2
   - material: ACTIVATOR_RAIL
-    weight: 6
+    weight: 1.8
   - material: AIR
     weight: 0.01
   - material: ALLAY_SPAWN_EGG
@@ -131,15 +131,15 @@ materialWeights:
   - material: ANCIENT_DEBRIS
     weight: 60
   - material: ANDESITE
-    weight: 40
+    weight: 6
   - material: ANDESITE_SLAB
-    weight: 20
+    weight: 3
   - material: ANDESITE_STAIRS
-    weight: 30
+    weight: 4.5
   - material: ANDESITE_WALL
-    weight: 40
+    weight: 6
   - material: ANVIL
-    weight: 250
+    weight: 90
   - material: APPLE
     weight: 0.2
   - material: ARMADILLO_SCUTE
@@ -201,7 +201,7 @@ materialWeights:
   - material: BAMBOO_TRAPDOOR
     weight: 3
   - material: BARREL
-    weight: 18
+    weight: 8
   - material: BARRIER
     weight: 0.01
   - material: BASALT
@@ -249,9 +249,9 @@ materialWeights:
   - material: BIRCH_LEAVES
     weight: 0.3
   - material: BIRCH_LOG
-    weight: 8
-  - material: BIRCH_PLANKS
     weight: 2
+  - material: BIRCH_PLANKS
+    weight: 1
   - material: BIRCH_PRESSURE_PLATE
     weight: 0.5
   - material: BIRCH_SAPLING
@@ -265,7 +265,7 @@ materialWeights:
   - material: BIRCH_TRAPDOOR
     weight: 3
   - material: BIRCH_WOOD
-    weight: 8
+    weight: 2
   - material: BLACK_BANNER
     weight: 1
   - material: BLACK_BED
@@ -275,33 +275,33 @@ materialWeights:
   - material: BLACK_CARPET
     weight: 1
   - material: BLACK_CONCRETE
-    weight: 50
+    weight: 10
   - material: BLACK_CONCRETE_POWDER
-    weight: 30
+    weight: 6
   - material: BLACK_DYE
     weight: 0.01
   - material: BLACK_GLAZED_TERRACOTTA
-    weight: 55
+    weight: 8
   - material: BLACK_SHULKER_BOX
     weight: 5
   - material: BLACK_STAINED_GLASS
-    weight: 40
+    weight: 3
   - material: BLACK_STAINED_GLASS_PANE
-    weight: 5
+    weight: 1
   - material: BLACK_TERRACOTTA
-    weight: 50
+    weight: 8
   - material: BLACK_WOOL
     weight: 4
   - material: BLACKSTONE
-    weight: 60
+    weight: 8
   - material: BLACKSTONE_SLAB
-    weight: 30
+    weight: 4
   - material: BLACKSTONE_STAIRS
-    weight: 45
+    weight: 5.5
   - material: BLACKSTONE_WALL
-    weight: 60
+    weight: 8
   - material: BLAST_FURNACE
-    weight: 40
+    weight: 15
   - material: BLAZE_POWDER
     weight: 0.05
   - material: BLAZE_ROD
@@ -317,13 +317,13 @@ materialWeights:
   - material: BLUE_CARPET
     weight: 1
   - material: BLUE_CONCRETE
-    weight: 50
+    weight: 10
   - material: BLUE_CONCRETE_POWDER
-    weight: 30
+    weight: 6
   - material: BLUE_DYE
     weight: 0.01
   - material: BLUE_GLAZED_TERRACOTTA
-    weight: 55
+    weight: 8
   - material: BLUE_ICE
     weight: 65
   - material: BLUE_ORCHID
@@ -331,11 +331,11 @@ materialWeights:
   - material: BLUE_SHULKER_BOX
     weight: 5
   - material: BLUE_STAINED_GLASS
-    weight: 40
+    weight: 3
   - material: BLUE_STAINED_GLASS_PANE
-    weight: 5
+    weight: 1
   - material: BLUE_TERRACOTTA
-    weight: 50
+    weight: 8
   - material: BLUE_WOOL
     weight: 4
   - material: BONE
@@ -377,13 +377,13 @@ materialWeights:
   - material: BROWN_CARPET
     weight: 1
   - material: BROWN_CONCRETE
-    weight: 50
+    weight: 10
   - material: BROWN_CONCRETE_POWDER
-    weight: 30
+    weight: 6
   - material: BROWN_DYE
     weight: 0.01
   - material: BROWN_GLAZED_TERRACOTTA
-    weight: 55
+    weight: 8
   - material: BROWN_MUSHROOM
     weight: 0.1
   - material: BROWN_MUSHROOM_BLOCK
@@ -391,11 +391,11 @@ materialWeights:
   - material: BROWN_SHULKER_BOX
     weight: 5
   - material: BROWN_STAINED_GLASS
-    weight: 40
+    weight: 3
   - material: BROWN_STAINED_GLASS_PANE
-    weight: 5
+    weight: 1
   - material: BROWN_TERRACOTTA
-    weight: 50
+    weight: 8
   - material: BROWN_WOOL
     weight: 4
   - material: BRUSH
@@ -447,7 +447,7 @@ materialWeights:
   - material: CHAINMAIL_LEGGINGS
     weight: 6
   - material: CHARCOAL
-    weight: 0.4
+    weight: 0.8
   - material: CHERRY_BOAT
     weight: 12
   - material: CHERRY_BUTTON
@@ -465,9 +465,9 @@ materialWeights:
   - material: CHERRY_LEAVES
     weight: 0.3
   - material: CHERRY_LOG
-    weight: 8
-  - material: CHERRY_PLANKS
     weight: 2
+  - material: CHERRY_PLANKS
+    weight: 1
   - material: CHERRY_PRESSURE_PLATE
     weight: 0.5
   - material: CHERRY_SAPLING
@@ -481,11 +481,11 @@ materialWeights:
   - material: CHERRY_TRAPDOOR
     weight: 3
   - material: CHERRY_WOOD
-    weight: 8
+    weight: 2
   - material: CHEST
-    weight: 20
+    weight: 8
   - material: CHEST_MINECART
-    weight: 120
+    weight: 30
   - material: CHICKEN
     weight: 0.2
   - material: CHICKEN_SPAWN_EGG
@@ -497,17 +497,17 @@ materialWeights:
   - material: CHISELED_COPPER
     weight: 98.6
   - material: CHISELED_DEEPSLATE
-    weight: 70
+    weight: 8
   - material: CHISELED_NETHER_BRICKS
     weight: 40
   - material: CHISELED_POLISHED_BLACKSTONE
-    weight: 60
+    weight: 8
   - material: CHISELED_QUARTZ_BLOCK
     weight: 1
   - material: CHISELED_RED_SANDSTONE
-    weight: 50
+    weight: 6
   - material: CHISELED_SANDSTONE
-    weight: 50
+    weight: 6
   - material: CHISELED_STONE_BRICKS
     weight: 50
   - material: CHISELED_TUFF
@@ -525,29 +525,29 @@ materialWeights:
   - material: CLOCK
     weight: 4.5
   - material: COAL
-    weight: 0.3
+    weight: 0.8
   - material: COAL_BLOCK
-    weight: 2.7
+    weight: 7.2
   - material: COAL_ORE
-    weight: 1
+    weight: 2
   - material: COARSE_DIRT
-    weight: 25
+    weight: 3
   - material: COBBLED_DEEPSLATE
-    weight: 50
+    weight: 8
   - material: COBBLED_DEEPSLATE_SLAB
-    weight: 25
+    weight: 4
   - material: COBBLED_DEEPSLATE_STAIRS
-    weight: 37.5
+    weight: 5.5
   - material: COBBLED_DEEPSLATE_WALL
-    weight: 50
+    weight: 8
   - material: COBBLESTONE
-    weight: 35
+    weight: 6
   - material: COBBLESTONE_SLAB
-    weight: 17.5
+    weight: 3
   - material: COBBLESTONE_STAIRS
-    weight: 26.2
+    weight: 4.5
   - material: COBBLESTONE_WALL
-    weight: 35
+    weight: 6
   - material: COBWEB
     weight: 0.2
   - material: COCOA_BEANS
@@ -561,7 +561,7 @@ materialWeights:
   - material: COMMAND_BLOCK
     weight: 100
   - material: COMMAND_BLOCK_MINECART
-    weight: 110
+    weight: 60
   - material: COMPARATOR
     weight: 0.5
   - material: COMPASS
@@ -587,11 +587,11 @@ materialWeights:
   - material: COOKIE
     weight: 0.05
   - material: COPPER_BLOCK
-    weight: 9.9
+    weight: 12
   - material: COPPER_INGOT
-    weight: 1.1
+    weight: 1.3
   - material: COPPER_ORE
-    weight: 2
+    weight: 2.5
   - material: CORNFLOWER
     weight: 0.1
   - material: COW_SPAWN_EGG
@@ -603,13 +603,13 @@ materialWeights:
   - material: CRACKED_NETHER_BRICKS
     weight: 40
   - material: CRACKED_POLISHED_BLACKSTONE_BRICKS
-    weight: 60
+    weight: 8
   - material: CRACKED_STONE_BRICKS
     weight: 50
   - material: CRAFTER
     weight: 25
   - material: CRAFTING_TABLE
-    weight: 15
+    weight: 6
   - material: CREEPER_BANNER_PATTERN
     weight: 0.1
   - material: CREEPER_HEAD
@@ -629,11 +629,11 @@ materialWeights:
   - material: CRIMSON_HANGING_SIGN
     weight: 2
   - material: CRIMSON_HYPHAE
-    weight: 8
+    weight: 2
   - material: CRIMSON_NYLIUM
     weight: 30
   - material: CRIMSON_PLANKS
-    weight: 2
+    weight: 1
   - material: CRIMSON_PRESSURE_PLATE
     weight: 0.5
   - material: CRIMSON_ROOTS
@@ -645,7 +645,7 @@ materialWeights:
   - material: CRIMSON_STAIRS
     weight: 1.5
   - material: CRIMSON_STEM
-    weight: 8
+    weight: 2
   - material: CRIMSON_TRAPDOOR
     weight: 3
   - material: CROSSBOW
@@ -659,13 +659,13 @@ materialWeights:
   - material: CUT_COPPER_STAIRS
     weight: 7.4
   - material: CUT_RED_SANDSTONE
-    weight: 50
+    weight: 6
   - material: CUT_RED_SANDSTONE_SLAB
-    weight: 25
+    weight: 3
   - material: CUT_SANDSTONE
-    weight: 50
+    weight: 6
   - material: CUT_SANDSTONE_SLAB
-    weight: 25
+    weight: 3
   - material: CYAN_BANNER
     weight: 1
   - material: CYAN_BED
@@ -675,21 +675,21 @@ materialWeights:
   - material: CYAN_CARPET
     weight: 1
   - material: CYAN_CONCRETE
-    weight: 50
+    weight: 10
   - material: CYAN_CONCRETE_POWDER
-    weight: 30
+    weight: 6
   - material: CYAN_DYE
     weight: 0.01
   - material: CYAN_GLAZED_TERRACOTTA
-    weight: 55
+    weight: 8
   - material: CYAN_SHULKER_BOX
     weight: 5
   - material: CYAN_STAINED_GLASS
-    weight: 40
+    weight: 3
   - material: CYAN_STAINED_GLASS_PANE
-    weight: 5
+    weight: 1
   - material: CYAN_TERRACOTTA
-    weight: 50
+    weight: 8
   - material: CYAN_WOOL
     weight: 4
   - material: DAMAGED_ANVIL
@@ -713,9 +713,9 @@ materialWeights:
   - material: DARK_OAK_LEAVES
     weight: 0.3
   - material: DARK_OAK_LOG
-    weight: 8
-  - material: DARK_OAK_PLANKS
     weight: 2
+  - material: DARK_OAK_PLANKS
+    weight: 1
   - material: DARK_OAK_PRESSURE_PLATE
     weight: 0.5
   - material: DARK_OAK_SAPLING
@@ -729,7 +729,7 @@ materialWeights:
   - material: DARK_OAK_TRAPDOOR
     weight: 3
   - material: DARK_OAK_WOOD
-    weight: 8
+    weight: 2
   - material: DARK_PRISMARINE
     weight: 60
   - material: DARK_PRISMARINE_SLAB
@@ -755,7 +755,7 @@ materialWeights:
   - material: DECORATED_POT
     weight: 5
   - material: DEEPSLATE
-    weight: 70
+    weight: 8
   - material: DEEPSLATE_BRICKS
     weight: 70
   - material: DEEPSLATE_BRICK_SLAB
@@ -765,21 +765,21 @@ materialWeights:
   - material: DEEPSLATE_BRICK_WALL
     weight: 70
   - material: DEEPSLATE_COAL_ORE
-    weight: 1.2
+    weight: 2
   - material: DEEPSLATE_COPPER_ORE
-    weight: 2.3
+    weight: 2.5
   - material: DEEPSLATE_DIAMOND_ORE
-    weight: 22
-  - material: DEEPSLATE_EMERALD_ORE
-    weight: 20
-  - material: DEEPSLATE_GOLD_ORE
-    weight: 6.5
-  - material: DEEPSLATE_IRON_ORE
-    weight: 16
-  - material: DEEPSLATE_LAPIS_ORE
-    weight: 3.5
-  - material: DEEPSLATE_REDSTONE_ORE
     weight: 4
+  - material: DEEPSLATE_EMERALD_ORE
+    weight: 3.5
+  - material: DEEPSLATE_GOLD_ORE
+    weight: 3
+  - material: DEEPSLATE_IRON_ORE
+    weight: 2.5
+  - material: DEEPSLATE_LAPIS_ORE
+    weight: 2.5
+  - material: DEEPSLATE_REDSTONE_ORE
+    weight: 2.5
   - material: DEEPSLATE_TILES
     weight: 70
   - material: DEEPSLATE_TILE_SLAB
@@ -789,13 +789,13 @@ materialWeights:
   - material: DEEPSLATE_TILE_WALL
     weight: 70
   - material: DETECTOR_RAIL
-    weight: 4
+    weight: 1.8
   - material: DIAMOND
-    weight: 2.5
+    weight: 2
   - material: DIAMOND_AXE
     weight: 7.5
   - material: DIAMOND_BLOCK
-    weight: 22.5
+    weight: 18
   - material: DIAMOND_BOOTS
     weight: 10
   - material: DIAMOND_CHESTPLATE
@@ -809,7 +809,7 @@ materialWeights:
   - material: DIAMOND_LEGGINGS
     weight: 17.5
   - material: DIAMOND_ORE
-    weight: 20
+    weight: 4
   - material: DIAMOND_PICKAXE
     weight: 5
   - material: DIAMOND_SHOVEL
@@ -817,15 +817,15 @@ materialWeights:
   - material: DIAMOND_SWORD
     weight: 15
   - material: DIORITE
-    weight: 40
+    weight: 6
   - material: DIORITE_SLAB
-    weight: 20
+    weight: 3
   - material: DIORITE_STAIRS
-    weight: 30
+    weight: 4.5
   - material: DIORITE_WALL
-    weight: 40
+    weight: 6
   - material: DIRT
-    weight: 20
+    weight: 3
   - material: DIRT_PATH
     weight: 20
   - material: DISC_FRAGMENT_5
@@ -861,11 +861,11 @@ materialWeights:
   - material: ELYTRA
     weight: 5
   - material: EMERALD
-    weight: 2.2
+    weight: 1.8
   - material: EMERALD_BLOCK
-    weight: 19.8
+    weight: 16.2
   - material: EMERALD_ORE
-    weight: 18
+    weight: 3.5
   - material: ENCHANTED_BOOK
     weight: 0.75
   - material: ENCHANTED_GOLDEN_APPLE
@@ -947,21 +947,21 @@ materialWeights:
   - material: FROSTED_ICE
     weight: 90
   - material: FURNACE
-    weight: 30
+    weight: 12
   - material: FURNACE_MINECART
-    weight: 40
+    weight: 30
   - material: GHAST_SPAWN_EGG
     weight: 0.1
   - material: GHAST_TEAR
     weight: 0.1
   - material: GILDED_BLACKSTONE
-    weight: 70
+    weight: 10
   - material: GLASS
-    weight: 40
+    weight: 3
   - material: GLASS_BOTTLE
     weight: 0.2
   - material: GLASS_PANE
-    weight: 5
+    weight: 1
   - material: GLISTERING_MELON_SLICE
     weight: 0.2
   - material: GLOW_BERRIES
@@ -983,13 +983,13 @@ materialWeights:
   - material: GOAT_SPAWN_EGG
     weight: 0.1
   - material: GOLD_BLOCK
-    weight: 36
+    weight: 18
   - material: GOLD_INGOT
-    weight: 4
+    weight: 2
   - material: GOLD_NUGGET
     weight: 0.44
   - material: GOLD_ORE
-    weight: 6
+    weight: 3
   - material: GOLDEN_APPLE
     weight: 0.36
   - material: GOLDEN_AXE
@@ -1015,17 +1015,17 @@ materialWeights:
   - material: GOLDEN_SWORD
     weight: 21.6
   - material: GRANITE
-    weight: 40
+    weight: 6
   - material: GRANITE_SLAB
-    weight: 20
+    weight: 3
   - material: GRANITE_STAIRS
-    weight: 30
+    weight: 4.5
   - material: GRANITE_WALL
-    weight: 40
+    weight: 6
   - material: GRASS_BLOCK
     weight: 20
   - material: GRAVEL
-    weight: 30
+    weight: 5
   - material: GRAY_BANNER
     weight: 1
   - material: GRAY_BED
@@ -1035,21 +1035,21 @@ materialWeights:
   - material: GRAY_CARPET
     weight: 1
   - material: GRAY_CONCRETE
-    weight: 50
+    weight: 10
   - material: GRAY_CONCRETE_POWDER
-    weight: 30
+    weight: 6
   - material: GRAY_DYE
     weight: 0.01
   - material: GRAY_GLAZED_TERRACOTTA
-    weight: 55
+    weight: 8
   - material: GRAY_SHULKER_BOX
     weight: 5
   - material: GRAY_STAINED_GLASS
-    weight: 40
+    weight: 3
   - material: GRAY_STAINED_GLASS_PANE
-    weight: 5
+    weight: 1
   - material: GRAY_TERRACOTTA
-    weight: 50
+    weight: 8
   - material: GRAY_WOOL
     weight: 4
   - material: GREEN_BANNER
@@ -1061,21 +1061,21 @@ materialWeights:
   - material: GREEN_CARPET
     weight: 1
   - material: GREEN_CONCRETE
-    weight: 50
+    weight: 10
   - material: GREEN_CONCRETE_POWDER
-    weight: 30
+    weight: 6
   - material: GREEN_DYE
     weight: 0.01
   - material: GREEN_GLAZED_TERRACOTTA
-    weight: 55
+    weight: 8
   - material: GREEN_SHULKER_BOX
     weight: 5
   - material: GREEN_STAINED_GLASS
-    weight: 40
+    weight: 3
   - material: GREEN_STAINED_GLASS_PANE
-    weight: 5
+    weight: 1
   - material: GREEN_TERRACOTTA
-    weight: 50
+    weight: 8
   - material: GREEN_WOOL
     weight: 4
   - material: GRINDSTONE
@@ -1105,9 +1105,9 @@ materialWeights:
   - material: HONEYCOMB_BLOCK
     weight: 2
   - material: HOPPER
-    weight: 39
+    weight: 10
   - material: HOPPER_MINECART
-    weight: 139
+    weight: 30
   - material: HORN_CORAL_BLOCK
     weight: 15
   - material: HORSE_SPAWN_EGG
@@ -1123,7 +1123,7 @@ materialWeights:
   - material: INFESTED_CRACKED_STONE_BRICKS
     weight: 50
   - material: INFESTED_DEEPSLATE
-    weight: 70
+    weight: 8
   - material: INFESTED_MOSSY_STONE_BRICKS
     weight: 50
   - material: INFESTED_STONE
@@ -1137,7 +1137,7 @@ materialWeights:
   - material: IRON_BARS
     weight: 19.5
   - material: IRON_BLOCK
-    weight: 90
+    weight: 13.5
   - material: IRON_BOOTS
     weight: 6.5
   - material: IRON_CHESTPLATE
@@ -1153,13 +1153,13 @@ materialWeights:
   - material: IRON_HORSE_ARMOR
     weight: 15.6
   - material: IRON_INGOT
-    weight: 10
+    weight: 1.5
   - material: IRON_LEGGINGS
     weight: 11.7
   - material: IRON_NUGGET
     weight: 1.1
   - material: IRON_ORE
-    weight: 15
+    weight: 2.5
   - material: IRON_PICKAXE
     weight: 5.2
   - material: IRON_SHOVEL
@@ -1193,9 +1193,9 @@ materialWeights:
   - material: JUNGLE_LEAVES
     weight: 0.3
   - material: JUNGLE_LOG
-    weight: 8
-  - material: JUNGLE_PLANKS
     weight: 2
+  - material: JUNGLE_PLANKS
+    weight: 1
   - material: JUNGLE_PRESSURE_PLATE
     weight: 0.5
   - material: JUNGLE_SAPLING
@@ -1209,7 +1209,7 @@ materialWeights:
   - material: JUNGLE_TRAPDOOR
     weight: 3
   - material: JUNGLE_WOOD
-    weight: 8
+    weight: 2
   - material: KELP
     weight: 0.2
   - material: KNOWLEDGE_BOOK
@@ -1223,7 +1223,7 @@ materialWeights:
   - material: LAPIS_LAZULI
     weight: 0.5
   - material: LAPIS_ORE
-    weight: 3
+    weight: 2.5
   - material: LARGE_AMETHYST_BUD
     weight: 13
   - material: LAVA
@@ -1259,21 +1259,21 @@ materialWeights:
   - material: LIGHT_BLUE_CARPET
     weight: 1
   - material: LIGHT_BLUE_CONCRETE
-    weight: 50
+    weight: 10
   - material: LIGHT_BLUE_CONCRETE_POWDER
-    weight: 30
+    weight: 6
   - material: LIGHT_BLUE_DYE
     weight: 0.01
   - material: LIGHT_BLUE_GLAZED_TERRACOTTA
-    weight: 55
+    weight: 8
   - material: LIGHT_BLUE_SHULKER_BOX
     weight: 5
   - material: LIGHT_BLUE_STAINED_GLASS
-    weight: 40
+    weight: 3
   - material: LIGHT_BLUE_STAINED_GLASS_PANE
-    weight: 5
+    weight: 1
   - material: LIGHT_BLUE_TERRACOTTA
-    weight: 50
+    weight: 8
   - material: LIGHT_BLUE_WOOL
     weight: 4
   - material: LIGHT_GRAY_BANNER
@@ -1285,21 +1285,21 @@ materialWeights:
   - material: LIGHT_GRAY_CARPET
     weight: 1
   - material: LIGHT_GRAY_CONCRETE
-    weight: 50
+    weight: 10
   - material: LIGHT_GRAY_CONCRETE_POWDER
-    weight: 30
+    weight: 6
   - material: LIGHT_GRAY_DYE
     weight: 0.01
   - material: LIGHT_GRAY_GLAZED_TERRACOTTA
-    weight: 55
+    weight: 8
   - material: LIGHT_GRAY_SHULKER_BOX
     weight: 5
   - material: LIGHT_GRAY_STAINED_GLASS
-    weight: 40
+    weight: 3
   - material: LIGHT_GRAY_STAINED_GLASS_PANE
-    weight: 5
+    weight: 1
   - material: LIGHT_GRAY_TERRACOTTA
-    weight: 50
+    weight: 8
   - material: LIGHT_GRAY_WOOL
     weight: 4
   - material: LIGHT_WEIGHTED_PRESSURE_PLATE
@@ -1321,21 +1321,21 @@ materialWeights:
   - material: LIME_CARPET
     weight: 1
   - material: LIME_CONCRETE
-    weight: 50
+    weight: 10
   - material: LIME_CONCRETE_POWDER
-    weight: 30
+    weight: 6
   - material: LIME_DYE
     weight: 0.01
   - material: LIME_GLAZED_TERRACOTTA
-    weight: 55
+    weight: 8
   - material: LIME_SHULKER_BOX
     weight: 5
   - material: LIME_STAINED_GLASS
-    weight: 40
+    weight: 3
   - material: LIME_STAINED_GLASS_PANE
-    weight: 5
+    weight: 1
   - material: LIME_TERRACOTTA
-    weight: 50
+    weight: 8
   - material: LIME_WOOL
     weight: 4
   - material: LINGERING_POTION
@@ -1357,21 +1357,21 @@ materialWeights:
   - material: MAGENTA_CARPET
     weight: 1
   - material: MAGENTA_CONCRETE
-    weight: 50
+    weight: 10
   - material: MAGENTA_CONCRETE_POWDER
-    weight: 30
+    weight: 6
   - material: MAGENTA_DYE
     weight: 0.01
   - material: MAGENTA_GLAZED_TERRACOTTA
-    weight: 55
+    weight: 8
   - material: MAGENTA_SHULKER_BOX
     weight: 5
   - material: MAGENTA_STAINED_GLASS
-    weight: 40
+    weight: 3
   - material: MAGENTA_STAINED_GLASS_PANE
-    weight: 5
+    weight: 1
   - material: MAGENTA_TERRACOTTA
-    weight: 50
+    weight: 8
   - material: MAGENTA_WOOL
     weight: 4
   - material: MAGMA_BLOCK
@@ -1397,9 +1397,9 @@ materialWeights:
   - material: MANGROVE_LEAVES
     weight: 0.3
   - material: MANGROVE_LOG
-    weight: 8
-  - material: MANGROVE_PLANKS
     weight: 2
+  - material: MANGROVE_PLANKS
+    weight: 1
   - material: MANGROVE_PRESSURE_PLATE
     weight: 0.5
   - material: MANGROVE_PROPAGULE
@@ -1415,7 +1415,7 @@ materialWeights:
   - material: MANGROVE_TRAPDOOR
     weight: 3
   - material: MANGROVE_WOOD
-    weight: 8
+    weight: 2
   - material: MAP
     weight: 0.1
   - material: MEDIUM_AMETHYST_BUD
@@ -1429,7 +1429,7 @@ materialWeights:
   - material: MILK_BUCKET
     weight: 3
   - material: MINECART
-    weight: 100
+    weight: 20
   - material: MOJANG_BANNER_PATTERN
     weight: 0.1
   - material: MOOSHROOM_SPAWN_EGG
@@ -1523,7 +1523,7 @@ materialWeights:
   - material: NETHER_BRICK_WALL
     weight: 40
   - material: NETHER_GOLD_ORE
-    weight: 6
+    weight: 3
   - material: NETHER_QUARTZ_ORE
     weight: 1.5
   - material: NETHER_SPROUTS
@@ -1537,7 +1537,7 @@ materialWeights:
   - material: NETHERITE_AXE
     weight: 28
   - material: NETHERITE_BLOCK
-    weight: 342
+    weight: 54
   - material: NETHERITE_BOOTS
     weight: 24
   - material: NETHERITE_CHESTPLATE
@@ -1547,7 +1547,7 @@ materialWeights:
   - material: NETHERITE_HOE
     weight: 16
   - material: NETHERITE_INGOT
-    weight: 38
+    weight: 6
   - material: NETHERITE_LEGGINGS
     weight: 48
   - material: NETHERITE_PICKAXE
@@ -1581,9 +1581,9 @@ materialWeights:
   - material: OAK_LEAVES
     weight: 0.3
   - material: OAK_LOG
-    weight: 8
-  - material: OAK_PLANKS
     weight: 2
+  - material: OAK_PLANKS
+    weight: 1
   - material: OAK_PRESSURE_PLATE
     weight: 0.5
   - material: OAK_SAPLING
@@ -1597,7 +1597,7 @@ materialWeights:
   - material: OAK_TRAPDOOR
     weight: 3
   - material: OAK_WOOD
-    weight: 8
+    weight: 2
   - material: OBSERVER
     weight: 45
   - material: OBSIDIAN
@@ -1619,21 +1619,21 @@ materialWeights:
   - material: ORANGE_CARPET
     weight: 1
   - material: ORANGE_CONCRETE
-    weight: 50
+    weight: 10
   - material: ORANGE_CONCRETE_POWDER
-    weight: 30
+    weight: 6
   - material: ORANGE_DYE
     weight: 0.01
   - material: ORANGE_GLAZED_TERRACOTTA
-    weight: 55
+    weight: 8
   - material: ORANGE_SHULKER_BOX
     weight: 5
   - material: ORANGE_STAINED_GLASS
-    weight: 40
+    weight: 3
   - material: ORANGE_STAINED_GLASS_PANE
-    weight: 5
+    weight: 1
   - material: ORANGE_TERRACOTTA
-    weight: 50
+    weight: 8
   - material: ORANGE_TULIP
     weight: 0.1
   - material: ORANGE_WOOL
@@ -1685,23 +1685,23 @@ materialWeights:
   - material: PINK_CARPET
     weight: 1
   - material: PINK_CONCRETE
-    weight: 50
+    weight: 10
   - material: PINK_CONCRETE_POWDER
-    weight: 30
+    weight: 6
   - material: PINK_DYE
     weight: 0.01
   - material: PINK_GLAZED_TERRACOTTA
-    weight: 55
+    weight: 8
   - material: PINK_PETALS
     weight: 0.05
   - material: PINK_SHULKER_BOX
     weight: 5
   - material: PINK_STAINED_GLASS
-    weight: 40
+    weight: 3
   - material: PINK_STAINED_GLASS_PANE
-    weight: 5
+    weight: 1
   - material: PINK_TERRACOTTA
-    weight: 50
+    weight: 8
   - material: PINK_TULIP
     weight: 0.1
   - material: PINK_WOOL
@@ -1725,53 +1725,53 @@ materialWeights:
   - material: POLAR_BEAR_SPAWN_EGG
     weight: 0.1
   - material: POLISHED_ANDESITE
-    weight: 40
+    weight: 6
   - material: POLISHED_ANDESITE_SLAB
-    weight: 20
+    weight: 3
   - material: POLISHED_ANDESITE_STAIRS
-    weight: 30
+    weight: 4.5
   - material: POLISHED_BASALT
     weight: 50
   - material: POLISHED_BLACKSTONE
-    weight: 60
+    weight: 8
   - material: POLISHED_BLACKSTONE_BRICKS
-    weight: 60
+    weight: 8
   - material: POLISHED_BLACKSTONE_BRICK_SLAB
-    weight: 30
+    weight: 4
   - material: POLISHED_BLACKSTONE_BRICK_STAIRS
-    weight: 45
+    weight: 5.5
   - material: POLISHED_BLACKSTONE_BRICK_WALL
-    weight: 60
+    weight: 8
   - material: POLISHED_BLACKSTONE_BUTTON
     weight: 0.3
   - material: POLISHED_BLACKSTONE_PRESSURE_PLATE
     weight: 2
   - material: POLISHED_BLACKSTONE_SLAB
-    weight: 30
+    weight: 4
   - material: POLISHED_BLACKSTONE_STAIRS
-    weight: 45
+    weight: 5.5
   - material: POLISHED_BLACKSTONE_WALL
-    weight: 60
+    weight: 8
   - material: POLISHED_DEEPSLATE
-    weight: 70
+    weight: 8
   - material: POLISHED_DEEPSLATE_SLAB
-    weight: 35
+    weight: 4
   - material: POLISHED_DEEPSLATE_STAIRS
-    weight: 52.5
+    weight: 5.5
   - material: POLISHED_DEEPSLATE_WALL
-    weight: 70
+    weight: 8
   - material: POLISHED_DIORITE
-    weight: 40
+    weight: 6
   - material: POLISHED_DIORITE_SLAB
-    weight: 20
+    weight: 3
   - material: POLISHED_DIORITE_STAIRS
-    weight: 30
+    weight: 4.5
   - material: POLISHED_GRANITE
-    weight: 40
+    weight: 6
   - material: POLISHED_GRANITE_SLAB
-    weight: 20
+    weight: 3
   - material: POLISHED_GRANITE_STAIRS
-    weight: 30
+    weight: 4.5
   - material: POLISHED_TUFF
     weight: 45
   - material: POLISHED_TUFF_SLAB
@@ -1861,7 +1861,7 @@ materialWeights:
   - material: POWDER_SNOW_BUCKET
     weight: 2
   - material: POWERED_RAIL
-    weight: 5
+    weight: 1.8
   - material: PRISMARINE
     weight: 60
   - material: PRISMARINE_BRICKS
@@ -1901,21 +1901,21 @@ materialWeights:
   - material: PURPLE_CARPET
     weight: 1
   - material: PURPLE_CONCRETE
-    weight: 50
+    weight: 10
   - material: PURPLE_CONCRETE_POWDER
-    weight: 30
+    weight: 6
   - material: PURPLE_DYE
     weight: 0.01
   - material: PURPLE_GLAZED_TERRACOTTA
-    weight: 55
+    weight: 8
   - material: PURPLE_SHULKER_BOX
     weight: 5
   - material: PURPLE_STAINED_GLASS
-    weight: 40
+    weight: 3
   - material: PURPLE_STAINED_GLASS_PANE
-    weight: 5
+    weight: 1
   - material: PURPLE_TERRACOTTA
-    weight: 50
+    weight: 8
   - material: PURPLE_WOOL
     weight: 4
   - material: PURPUR_BLOCK
@@ -1949,21 +1949,21 @@ materialWeights:
   - material: RABBIT_STEW
     weight: 0.8
   - material: RAIL
-    weight: 3
+    weight: 1.5
   - material: RAVAGER_SPAWN_EGG
     weight: 0.1
   - material: RAW_COPPER
-    weight: 1.3
+    weight: 2.5
   - material: RAW_COPPER_BLOCK
-    weight: 11.7
+    weight: 22.5
   - material: RAW_GOLD
-    weight: 4
+    weight: 3
   - material: RAW_GOLD_BLOCK
-    weight: 36
+    weight: 27
   - material: RAW_IRON
-    weight: 1.2
+    weight: 2.5
   - material: RAW_IRON_BLOCK
-    weight: 10.8
+    weight: 22.5
   - material: RECOVERY_COMPASS
     weight: 4.5
   - material: RED_BANNER
@@ -1975,13 +1975,13 @@ materialWeights:
   - material: RED_CARPET
     weight: 1
   - material: RED_CONCRETE
-    weight: 50
+    weight: 10
   - material: RED_CONCRETE_POWDER
-    weight: 30
+    weight: 6
   - material: RED_DYE
     weight: 0.01
   - material: RED_GLAZED_TERRACOTTA
-    weight: 55
+    weight: 8
   - material: RED_MUSHROOM
     weight: 0.1
   - material: RED_MUSHROOM_BLOCK
@@ -1995,35 +1995,35 @@ materialWeights:
   - material: RED_NETHER_BRICK_WALL
     weight: 40
   - material: RED_SAND
-    weight: 30
+    weight: 4
   - material: RED_SANDSTONE
-    weight: 50
+    weight: 6
   - material: RED_SANDSTONE_SLAB
-    weight: 25
+    weight: 3
   - material: RED_SANDSTONE_STAIRS
-    weight: 37.5
+    weight: 4.5
   - material: RED_SANDSTONE_WALL
-    weight: 50
+    weight: 6
   - material: RED_SHULKER_BOX
     weight: 5
   - material: RED_STAINED_GLASS
-    weight: 40
+    weight: 3
   - material: RED_STAINED_GLASS_PANE
-    weight: 5
+    weight: 1
   - material: RED_TERRACOTTA
-    weight: 50
+    weight: 8
   - material: RED_TULIP
     weight: 0.1
   - material: RED_WOOL
     weight: 4
   - material: REDSTONE
-    weight: 0.2
+    weight: 0.3
   - material: REDSTONE_BLOCK
-    weight: 1.8
+    weight: 2.7
   - material: REDSTONE_LAMP
     weight: 66
   - material: REDSTONE_ORE
-    weight: 3.5
+    weight: 2.5
   - material: REDSTONE_TORCH
     weight: 0.12
   - material: REINFORCED_DEEPSLATE
@@ -2047,15 +2047,15 @@ materialWeights:
   - material: SALMON_SPAWN_EGG
     weight: 0.1
   - material: SAND
-    weight: 30
+    weight: 4
   - material: SANDSTONE
-    weight: 50
+    weight: 6
   - material: SANDSTONE_SLAB
-    weight: 25
+    weight: 3
   - material: SANDSTONE_STAIRS
-    weight: 37.5
+    weight: 4.5
   - material: SANDSTONE_WALL
-    weight: 50
+    weight: 6
   - material: SCAFFOLDING
     weight: 1
   - material: SCULK
@@ -2109,7 +2109,7 @@ materialWeights:
   - material: SMITHING_TABLE
     weight: 25
   - material: SMOKER
-    weight: 20
+    weight: 10
   - material: SMOOTH_BASALT
     weight: 50
   - material: SMOOTH_QUARTZ
@@ -2119,17 +2119,17 @@ materialWeights:
   - material: SMOOTH_QUARTZ_STAIRS
     weight: 0.8
   - material: SMOOTH_RED_SANDSTONE
-    weight: 50
+    weight: 6
   - material: SMOOTH_RED_SANDSTONE_SLAB
-    weight: 25
+    weight: 3
   - material: SMOOTH_RED_SANDSTONE_STAIRS
-    weight: 37.5
+    weight: 4.5
   - material: SMOOTH_SANDSTONE
-    weight: 50
+    weight: 6
   - material: SMOOTH_SANDSTONE_SLAB
-    weight: 25
+    weight: 3
   - material: SMOOTH_SANDSTONE_STAIRS
-    weight: 37.5
+    weight: 4.5
   - material: SMOOTH_STONE
     weight: 50
   - material: SMOOTH_STONE_SLAB
@@ -2187,9 +2187,9 @@ materialWeights:
   - material: SPRUCE_LEAVES
     weight: 0.3
   - material: SPRUCE_LOG
-    weight: 8
-  - material: SPRUCE_PLANKS
     weight: 2
+  - material: SPRUCE_PLANKS
+    weight: 1
   - material: SPRUCE_PRESSURE_PLATE
     weight: 0.5
   - material: SPRUCE_SAPLING
@@ -2203,27 +2203,27 @@ materialWeights:
   - material: SPRUCE_TRAPDOOR
     weight: 3
   - material: SPRUCE_WOOD
-    weight: 8
+    weight: 2
   - material: SPYGLASS
-    weight: 40
+    weight: 4
   - material: SQUID_SPAWN_EGG
     weight: 0.1
   - material: STICK
-    weight: 0.1
+    weight: 0.05
   - material: STICKY_PISTON
     weight: 51
   - material: STONE
-    weight: 50
+    weight: 6
   - material: STONE_AXE
     weight: 4
   - material: STONE_BRICKS
-    weight: 50
+    weight: 6
   - material: STONE_BRICK_SLAB
-    weight: 25
+    weight: 3
   - material: STONE_BRICK_STAIRS
-    weight: 37.5
+    weight: 4.5
   - material: STONE_BRICK_WALL
-    weight: 50
+    weight: 6
   - material: STONE_BUTTON
     weight: 0.3
   - material: STONE_HOE
@@ -2235,9 +2235,9 @@ materialWeights:
   - material: STONE_SHOVEL
     weight: 1
   - material: STONE_SLAB
-    weight: 25
+    weight: 3
   - material: STONE_STAIRS
-    weight: 37.5
+    weight: 4.5
   - material: STONE_SWORD
     weight: 6
   - material: STONECUTTER
@@ -2249,47 +2249,47 @@ materialWeights:
   - material: STRING
     weight: 0.01
   - material: STRIPPED_ACACIA_LOG
-    weight: 7
+    weight: 2
   - material: STRIPPED_ACACIA_WOOD
-    weight: 7
+    weight: 2
   - material: STRIPPED_BAMBOO_BLOCK
     weight: 9
   - material: STRIPPED_BIRCH_LOG
     weight: 7
   - material: STRIPPED_BIRCH_WOOD
-    weight: 7
+    weight: 2
   - material: STRIPPED_CHERRY_LOG
-    weight: 7
+    weight: 2
   - material: STRIPPED_CHERRY_WOOD
-    weight: 7
+    weight: 2
   - material: STRIPPED_CRIMSON_HYPHAE
-    weight: 7
+    weight: 2
   - material: STRIPPED_CRIMSON_STEM
-    weight: 7
+    weight: 2
   - material: STRIPPED_DARK_OAK_LOG
-    weight: 7
+    weight: 2
   - material: STRIPPED_DARK_OAK_WOOD
-    weight: 7
+    weight: 2
   - material: STRIPPED_JUNGLE_LOG
-    weight: 7
+    weight: 2
   - material: STRIPPED_JUNGLE_WOOD
-    weight: 7
+    weight: 2
   - material: STRIPPED_MANGROVE_LOG
-    weight: 7
+    weight: 2
   - material: STRIPPED_MANGROVE_WOOD
-    weight: 7
+    weight: 2
   - material: STRIPPED_OAK_LOG
-    weight: 7
+    weight: 2
   - material: STRIPPED_OAK_WOOD
-    weight: 7
+    weight: 2
   - material: STRIPPED_SPRUCE_LOG
-    weight: 7
+    weight: 2
   - material: STRIPPED_SPRUCE_WOOD
-    weight: 7
+    weight: 2
   - material: STRIPPED_WARPED_HYPHAE
-    weight: 7
+    weight: 2
   - material: STRIPPED_WARPED_STEM
-    weight: 7
+    weight: 2
   - material: STRUCTURE_BLOCK
     weight: 100
   - material: STRUCTURE_VOID
@@ -2301,9 +2301,9 @@ materialWeights:
   - material: SUNFLOWER
     weight: 0.2
   - material: SUSPICIOUS_GRAVEL
-    weight: 30
+    weight: 5
   - material: SUSPICIOUS_SAND
-    weight: 30
+    weight: 4
   - material: SUSPICIOUS_STEW
     weight: 0.5
   - material: SWEET_BERRIES
@@ -2319,17 +2319,17 @@ materialWeights:
   - material: TARGET
     weight: 25
   - material: TERRACOTTA
-    weight: 50
+    weight: 8
   - material: TIDE_ARMOR_TRIM_SMITHING_TEMPLATE
     weight: 0.2
   - material: TINTED_GLASS
-    weight: 45
+    weight: 4
   - material: TIPPED_ARROW
     weight: 0.05
   - material: TNT
     weight: 20
   - material: TNT_MINECART
-    weight: 120
+    weight: 40
   - material: TORCH
     weight: 0.1
   - material: TORCHFLOWER
@@ -2497,21 +2497,21 @@ materialWeights:
   - material: WHITE_CARPET
     weight: 1
   - material: WHITE_CONCRETE
-    weight: 50
+    weight: 10
   - material: WHITE_CONCRETE_POWDER
-    weight: 30
+    weight: 6
   - material: WHITE_DYE
     weight: 0.01
   - material: WHITE_GLAZED_TERRACOTTA
-    weight: 55
+    weight: 8
   - material: WHITE_SHULKER_BOX
     weight: 5
   - material: WHITE_STAINED_GLASS
-    weight: 40
+    weight: 3
   - material: WHITE_STAINED_GLASS_PANE
-    weight: 5
+    weight: 1
   - material: WHITE_TERRACOTTA
-    weight: 50
+    weight: 8
   - material: WHITE_TULIP
     weight: 0.1
   - material: WHITE_WOOL
@@ -2555,21 +2555,21 @@ materialWeights:
   - material: YELLOW_CARPET
     weight: 1
   - material: YELLOW_CONCRETE
-    weight: 50
+    weight: 10
   - material: YELLOW_CONCRETE_POWDER
-    weight: 30
+    weight: 6
   - material: YELLOW_DYE
     weight: 0.01
   - material: YELLOW_GLAZED_TERRACOTTA
-    weight: 55
+    weight: 8
   - material: YELLOW_SHULKER_BOX
     weight: 5
   - material: YELLOW_STAINED_GLASS
-    weight: 40
+    weight: 3
   - material: YELLOW_STAINED_GLASS_PANE
-    weight: 5
+    weight: 1
   - material: YELLOW_TERRACOTTA
-    weight: 50
+    weight: 8
   - material: YELLOW_WOOL
     weight: 4
   - material: ZOGLIN_SPAWN_EGG
