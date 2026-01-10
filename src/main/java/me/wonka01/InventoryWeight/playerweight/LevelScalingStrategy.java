@@ -39,7 +39,12 @@ public class LevelScalingStrategy {
         String modeValue = section.getString("mode", "linear").toLowerCase();
         Mode parsedMode = parseMode(modeValue);
         double cap = section.getDouble("capMultiplier", 0.0);
+
         double linearMultiplier = section.getDouble("multiplierPerLevel", 1.1);
+        ConfigurationSection linearSection = section.getConfigurationSection("linear");
+        if (linearSection != null) {
+            linearMultiplier = linearSection.getDouble("multiplierPerLevel", linearMultiplier);
+        }
 
         double expSpan = 2.5;
         double expTau = 10.0;
