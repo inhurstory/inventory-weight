@@ -40,7 +40,8 @@ public class JoinEvent implements Listener {
             effectiveMaxWeight = plugin.getLevelManager().getEffectiveMaxWeight(player.getUniqueId(), baseWeightLimit);
             level = plugin.getLevelManager().getLevel(player.getUniqueId());
         }
-        playerData.applyLevelData(baseWeightLimit, level, plugin.getLevelMultiplier(), effectiveMaxWeight);
+        double effectiveMultiplier = plugin.getEffectiveMultiplier(player.getUniqueId(), baseWeightLimit);
+        playerData.applyLevelData(baseWeightLimit, level, effectiveMultiplier, effectiveMaxWeight);
 
         PlayerWeightMap.getPlayerWeightMap().put(player.getUniqueId(), playerData);
     }

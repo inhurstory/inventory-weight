@@ -1,6 +1,7 @@
 package me.wonka01.InventoryWeight.playerweight;
 
 import me.wonka01.InventoryWeight.InventoryWeight;
+import me.wonka01.InventoryWeight.playerweight.LevelScalingStrategy;
 import org.bukkit.configuration.file.YamlConfiguration;
 
 import java.io.File;
@@ -17,17 +18,21 @@ public class PlayerLevelManager {
     private YamlConfiguration yamlConfiguration;
     private boolean enabled;
     private int defaultLevel;
-    private double multiplierPerLevel;
     private int maxLevel;
+    private LevelScalingStrategy scalingStrategy;
 
     public PlayerLevelManager(InventoryWeight plugin) {
         this.plugin = plugin;
     }
 
-    public void configure(boolean enabled, int defaultLevel, double multiplierPerLevel, int maxLevel) {
+    public void configure(boolean enabled, int defaultLevel, int maxLevel, LevelScalingStrategy scalingStrategy) {
         this.enabled = enabled;
         this.defaultLevel = Math.max(1, defaultLevel);
-        this.multiplierPerLevel = multiplierPerLevel;
+        if (scalingStrategy == null) {
+            this.scalingStrategy = LevelScalingStrategy.fromConfig(plugin.getConfig());
+        } else {
+            this.scalingStrategy = scalingStrategy;
+        }
         this.maxLevel = Math.max(this.defaultLevel, maxLevel);
         if (!enabled) {
             levelCache.clear();
@@ -48,22 +53,40 @@ public class PlayerLevelManager {
         return enabled;
     }
 
-    public double getMultiplierPerLevel() {
-        return multiplierPerLevel;
+    public LevelScalingStrategy getScalingStrategy() {
+        return scalingStrategy;
     }
 
     public double getEffectiveMaxWeight(UUID playerId, double baseWeightLimit) {
         if (!enabled) {
             return baseWeightLimit;
         }
+        if (scalingStrategy == null) {
+            return baseWeightLimit;
+        }
         PlayerLevelState state = getOrCreateState(playerId, baseWeightLimit);
         if (Math.abs(baseWeightLimit - state.getBaseWeightLimit()) > 0.0001) {
             state.updateBaseWeightLimit(baseWeightLimit);
         }
-        if (Math.abs(multiplierPerLevel - state.getMultiplierPerLevel()) > 0.0000001) {
-            state.updateMultiplier(multiplierPerLevel);
+        return scalingStrategy.computeEffectiveWeight(baseWeightLimit, state.getLevel());
+    }
+
+    public double getEffectiveMultiplier(UUID playerId, double baseWeightLimit) {
+        if (!enabled) {
+            return 1.0;
         }
-        return state.getEffectiveWeightLimit();
+        if (scalingStrategy == null) {
+            return 1.0;
+        }
+        PlayerLevelState state = getOrCreateState(playerId, baseWeightLimit);
+        if (Math.abs(baseWeightLimit - state.getBaseWeightLimit()) > 0.0001) {
+            state.updateBaseWeightLimit(baseWeightLimit);
+        }
+        double multiplier = scalingStrategy.computeMultiplier(state.getLevel());
+        if (multiplier <= 0.0) {
+            return 1.0;
+        }
+        return multiplier;
     }
 
     public void setLevel(UUID playerId, int newLevel, double baseWeightLimit) {
@@ -72,7 +95,7 @@ public class PlayerLevelManager {
         }
         int clamped = clampLevel(newLevel);
         PlayerLevelState state = getOrCreateState(playerId, baseWeightLimit);
-        state.update(clamped, baseWeightLimit, multiplierPerLevel);
+        state.update(clamped, baseWeightLimit);
         writeToDisk();
     }
 
@@ -82,7 +105,7 @@ public class PlayerLevelManager {
         }
         PlayerLevelState state = getOrCreateState(playerId, baseWeightLimit);
         int updated = clampLevel(state.getLevel() + delta);
-        state.update(updated, baseWeightLimit, multiplierPerLevel);
+        state.update(updated, baseWeightLimit);
         writeToDisk();
     }
 
@@ -127,7 +150,7 @@ public class PlayerLevelManager {
                 UUID id = UUID.fromString(key);
                 int level = yamlConfiguration.getInt("players." + key + ".level", defaultLevel);
                 level = clampLevel(level);
-                levelCache.put(id, new PlayerLevelState(id, level, getDefaultWeightLimit(), multiplierPerLevel));
+                levelCache.put(id, new PlayerLevelState(id, level, getDefaultWeightLimit()));
             } catch (IllegalArgumentException e) {
                 // ignore malformed UUID entries
             }
@@ -152,10 +175,10 @@ public class PlayerLevelManager {
 
     private PlayerLevelState getOrCreateState(UUID playerId, double baseWeightLimit) {
         if (!enabled) {
-            return new PlayerLevelState(playerId, defaultLevel, baseWeightLimit, multiplierPerLevel);
+            return new PlayerLevelState(playerId, defaultLevel, baseWeightLimit);
         }
         if (!levelCache.containsKey(playerId)) {
-            levelCache.put(playerId, new PlayerLevelState(playerId, defaultLevel, baseWeightLimit, multiplierPerLevel));
+            levelCache.put(playerId, new PlayerLevelState(playerId, defaultLevel, baseWeightLimit));
         }
         return levelCache.get(playerId);
     }

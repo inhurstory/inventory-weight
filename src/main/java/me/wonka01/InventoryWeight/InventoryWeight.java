@@ -5,6 +5,7 @@ import me.wonka01.InventoryWeight.configuration.LanguageConfig;
 import me.wonka01.InventoryWeight.events.FreezePlayerEvent;
 import me.wonka01.InventoryWeight.events.JoinEvent;
 import me.wonka01.InventoryWeight.events.PreventJumpEvent;
+import me.wonka01.InventoryWeight.playerweight.LevelScalingStrategy;
 import me.wonka01.InventoryWeight.playerweight.ItemLimit;
 import me.wonka01.InventoryWeight.playerweight.PlayerLevelManager;
 import me.wonka01.InventoryWeight.playerweight.PlayerWeight;
@@ -77,7 +78,8 @@ public class InventoryWeight extends JavaPlugin {
                             effectiveMaxWeight = levelManager.getEffectiveMaxWeight(playerId, baseWeightLimit);
                             level = levelManager.getLevel(playerId);
                         }
-                        playerWeight.applyLevelData(baseWeightLimit, level, getLevelMultiplier(), effectiveMaxWeight);
+                        double effectiveMultiplier = getEffectiveMultiplier(playerId, baseWeightLimit);
+                        playerWeight.applyLevelData(baseWeightLimit, level, effectiveMultiplier, effectiveMaxWeight);
                         Inventory inv = player.getInventory();
 
                         if (inv != null) {
@@ -245,10 +247,10 @@ public class InventoryWeight extends JavaPlugin {
         }
         boolean enabled = getConfig().getBoolean("leveling.enabled", true);
         int defaultLevel = getConfig().getInt("leveling.defaultLevel", 1);
-        double multiplierPerLevel = getConfig().getDouble("leveling.multiplierPerLevel", 0.0);
         int maxLevel = getConfig().getInt("leveling.maxLevel", defaultLevel);
+        LevelScalingStrategy strategy = LevelScalingStrategy.fromConfig(getConfig());
         levelManager = new PlayerLevelManager(this);
-        levelManager.configure(enabled, defaultLevel, multiplierPerLevel, maxLevel);
+        levelManager.configure(enabled, defaultLevel, maxLevel, strategy);
     }
 
     public void reloadConfiguration() {
@@ -262,11 +264,11 @@ public class InventoryWeight extends JavaPlugin {
         return levelManager;
     }
 
-    public double getLevelMultiplier() {
+    public double getEffectiveMultiplier(UUID playerId, double baseWeightLimit) {
         if (levelManager == null || !levelManager.isEnabled()) {
-            return 0.0;
+            return 1.0;
         }
-        return levelManager.getMultiplierPerLevel();
+        return levelManager.getEffectiveMultiplier(playerId, baseWeightLimit);
     }
 
     public int getBaseWeightLimit(Player player) {

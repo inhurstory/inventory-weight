@@ -103,7 +103,8 @@ public class LevelCommand implements SubCommand {
         PlayerWeight playerWeight = PlayerWeightMap.getPlayerWeightMap().get(playerId);
         double effective = manager.getEffectiveMaxWeight(playerId, baseWeightLimit);
         int level = manager.getLevel(playerId);
-        playerWeight.applyLevelData(baseWeightLimit, level, manager.getMultiplierPerLevel(), effective);
+        double multiplier = manager.getEffectiveMultiplier(playerId, baseWeightLimit);
+        playerWeight.applyLevelData(baseWeightLimit, level, multiplier, effective);
         playerWeight.changeSpeed();
     }
 
@@ -112,10 +113,11 @@ public class LevelCommand implements SubCommand {
         double baseWeightLimit = plugin.getBaseWeightLimit(player);
         double effective = manager.getEffectiveMaxWeight(playerId, baseWeightLimit);
         int level = manager.getLevel(playerId);
+        double multiplier = manager.getEffectiveMultiplier(playerId, baseWeightLimit);
 
         String message = LanguageConfig.getConfig().getMessages().getLevelInfo()
                 .replace("%level%", String.valueOf(level))
-                .replace("%multiplier%", String.valueOf(manager.getMultiplierPerLevel()))
+                .replace("%multiplier%", String.valueOf(multiplier))
                 .replace("%max%", String.valueOf(effective));
         sender.sendMessage(ChatColor.translateAlternateColorCodes('&', message));
     }

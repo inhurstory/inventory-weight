@@ -44,8 +44,18 @@ defaultWeight: 1
 leveling:
   enabled: true
   defaultLevel: 1
-  multiplierPerLevel: 1.1
   maxLevel: 30
+  # 選擇公式：linear (舊的線性) 或 exponential (指數趨緩)
+  mode: exponential
+  # 線性公式：每等級倍率，1.1 代表每升一等 +10% 容量（mode=linear 時使用）
+  multiplierPerLevel: 1.1
+  # 指數趨緩公式：multiplier = 1 + span * (1 - e^(-(level-1-offset)/tau))
+  exponential:
+    span: 2.5
+    tau: 10.0
+    offset: 0
+  # 硬上限（所有模式套用），0.0 表示不封頂
+  capMultiplier: 0.0
 
 # List of materials and their weights, if a material is not listed then it assumes the default value
 # list of materials can be found here: https://hub.spigotmc.org/javadocs/spigot/org/bukkit/Material.html

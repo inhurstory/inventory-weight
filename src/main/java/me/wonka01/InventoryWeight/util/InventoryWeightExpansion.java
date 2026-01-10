@@ -90,7 +90,13 @@ public class InventoryWeightExpansion extends PlaceholderExpansion {
         }
         if (identifier.equals("multiplier")) {
             if (levelManager != null && levelManager.isEnabled()) {
-                return String.valueOf(levelManager.getMultiplierPerLevel());
+                double baseWeightLimit = plugin.getConfig().getInt("weightLimit");
+                if (player.isOnline()) {
+                    Player onlinePlayer = (Player) player;
+                    baseWeightLimit = plugin.getBaseWeightLimit(onlinePlayer);
+                }
+                double multiplier = levelManager.getEffectiveMultiplier(player.getUniqueId(), baseWeightLimit);
+                return String.valueOf(multiplier);
             }
             return "0";
         }
