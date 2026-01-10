@@ -30,6 +30,7 @@ public class InventoryWeightCommands implements CommandExecutor, TabCompleter {
         subCommands.put("get", new GetWeightCommand());
         subCommands.put("reload", new ReloadCommand());
         subCommands.put("level", new LevelCommand());
+        subCommands.put("preview", new PreviewCommand());
     }
 
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
