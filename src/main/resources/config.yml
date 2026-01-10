@@ -54,7 +54,7 @@ leveling:
   # 指數趨緩公式：multiplier = 1 + span(增幅範圍) * (1 - e^(-(level-1-offsetLevel)/timeConstant))
   exponential:
     # span (增幅範圍): 越大上限越高，決定最後能增加多少倍數
-    span: 2.5
+    span: 5.3
     # timeConstant (tau 時間常數): 越大越平滑、成長慢；越小前期衝得快但較早貼近上限
     tau: 10.0
     # offsetLevel (位移量): 往右平移起點，設定後會在更高等級才開始明顯增長
