@@ -223,7 +223,20 @@ For more information or to download the plugin, visit the [plugin page](https://
 - **`/iw level set|add <player> <value>`**: Allows administrators to set or add to a player's level. This command includes tab completion for subcommands and online player names.
 
 ## **New Placeholders**
-- The following new PlaceHolderAPI placeholders are available:
-  - **`%inventoryweight_level%`**: Displays the player's current level.
-  - **`%inventoryweight_multiplier%`**: Displays the current weight multiplier.
-- The existing `%inventoryweight_weight%` and `%inventoryweight_maxweight%` placeholders now account for the scaled max weight based on the player's level.
+- PlaceholderAPI identifier shortened to `iw` (was `inventoryweight`). Use `%iw_*%` instead of `%inventoryweight_*%`.
+- Added placeholders matching `/iw weight` output:
+  - **`%iw_weight_line%`**: Weight/max line.
+  - **`%iw_speed_line%`**: Speed percent line.
+  - **`%iw_speed_bar%`**: Weight bar line.
+  - **`%iw_weight_full%`**: The three lines above combined with `\n`.
+- Existing values (now under `iw`): `%iw_weight%`, `%iw_maxweight%`, `%iw_speed%`, `%iw_inventorybar%`, `%iw_weightPercentage%`.
+- Leveling placeholders kept: **`%iw_level%`** and **`%iw_multiplier%`**.
+
+## **Hotbar Item Weight Preview**
+- New config block:
+  ```yaml
+  itemWeightPreview:
+    enabled: true
+    mode: actionbar # actionbar, chat, title, subtitle, scoreboard, bossbar, off
+  ```
+- Shows held-item weight when scrolling the hotbar; respects world allowlist, creative mode, and `inventoryweight.off` permission; no display when hand is empty.

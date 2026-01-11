@@ -286,6 +286,10 @@ public class InventoryWeight extends JavaPlugin {
         return levelManager;
     }
 
+    public LanguageConfig getLanguageConfig() {
+        return languageConfig;
+    }
+
     public double getEffectiveMultiplier(UUID playerId, double baseWeightLimit) {
         if (levelManager == null || !levelManager.isEnabled()) {
             return 1.0;

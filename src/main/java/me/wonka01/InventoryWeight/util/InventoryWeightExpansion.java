@@ -5,6 +5,7 @@ import me.clip.placeholderapi.expansion.PlaceholderExpansion;
 import me.wonka01.InventoryWeight.playerweight.PlayerLevelManager;
 import me.wonka01.InventoryWeight.playerweight.PlayerWeight;
 import me.wonka01.InventoryWeight.playerweight.PlayerWeightMap;
+import org.bukkit.ChatColor;
 import org.bukkit.OfflinePlayer;
 import org.bukkit.entity.Player;
 
@@ -24,7 +25,7 @@ public class InventoryWeightExpansion extends PlaceholderExpansion {
 
     @Override
     public String getIdentifier() {
-        return "inventoryweight";
+        return "iw";
     }
 
     @Override
@@ -56,6 +57,19 @@ public class InventoryWeightExpansion extends PlaceholderExpansion {
             return String.valueOf(PlayerWeight.defaultMaxCapacity);
         }
 
+        if (identifier.equals("weight_line")) {
+            if (PlayerWeightMap.getPlayerWeightMap().containsKey(player.getUniqueId())) {
+                PlayerWeight weight = PlayerWeightMap.getPlayerWeightMap().get(player.getUniqueId());
+                DecimalFormat df = new DecimalFormat("#0.00");
+                String roundedWeight = df.format(weight.getWeight());
+                String roundedMaxWeight = df.format(weight.getMaxWeight());
+                return ChatColor.translateAlternateColorCodes('&',
+                        plugin.getLanguageConfig().getMessages().getWeight() + ": &a" + roundedWeight + " &f/ &c"
+                                + roundedMaxWeight);
+            }
+            return "";
+        }
+
         if (identifier.equals("speed")) {
             if (player.isOnline()) {
                 Player onlinePlayer = (Player) player;
@@ -63,6 +77,34 @@ public class InventoryWeightExpansion extends PlaceholderExpansion {
                 return String.valueOf(speed);
             }
             return "0.0";
+        }
+
+        if (identifier.equals("speed_line")) {
+            if (PlayerWeightMap.getPlayerWeightMap().containsKey(player.getUniqueId())) {
+                PlayerWeight weight = PlayerWeightMap.getPlayerWeightMap().get(player.getUniqueId());
+                return ChatColor.translateAlternateColorCodes('&',
+                        plugin.getLanguageConfig().getMessages().getSpeed() + ": &a" + weight.getPercentage() + "%");
+            }
+            return "";
+        }
+
+        if (identifier.equals("speed_bar")) {
+            if (PlayerWeightMap.getPlayerWeightMap().containsKey(player.getUniqueId())) {
+                PlayerWeight weight = PlayerWeightMap.getPlayerWeightMap().get(player.getUniqueId());
+                return ChatColor.WHITE + "[" + weight.getSpeedDisplay() + ChatColor.WHITE + "]";
+            }
+            return "";
+        }
+
+        if (identifier.equals("weight_full")) {
+            if (PlayerWeightMap.getPlayerWeightMap().containsKey(player.getUniqueId())) {
+                // Combine lines similar to /iw weight output, separated by new lines
+                String weightLine = onRequest(player, "weight_line");
+                String speedLine = onRequest(player, "speed_line");
+                String barLine = onRequest(player, "speed_bar");
+                return weightLine + "\n" + speedLine + "\n" + barLine;
+            }
+            return "";
         }
 
         if (identifier.equals("weightPercentage")) {
