@@ -62,6 +62,15 @@ public class LanguageConfig {
         String levelAdd = yamlConfiguration.getString("levelAdd");
         String levelingDisabledMessage = yamlConfiguration.getString("levelingDisabledMessage");
         String invalidPlayer = yamlConfiguration.getString("invalidPlayer");
+        String actionBarItemWeight = yamlConfiguration.getString("actionBarItemWeight");
+        String chatItemWeight = yamlConfiguration.getString("chatItemWeight");
+        String titleItemWeightTitle = yamlConfiguration.getString("titleItemWeightTitle");
+        String titleItemWeightSubtitle = yamlConfiguration.getString("titleItemWeightSubtitle");
+        String subtitleItemWeightTitle = yamlConfiguration.getString("subtitleItemWeightTitle");
+        String subtitleItemWeightSubtitle = yamlConfiguration.getString("subtitleItemWeightSubtitle");
+        String scoreboardItemWeightTitle = yamlConfiguration.getString("scoreboardItemWeightTitle");
+        String scoreboardItemWeightLine = yamlConfiguration.getString("scoreboardItemWeightLine");
+        String bossBarItemWeight = yamlConfiguration.getString("bossBarItemWeight");
         if (cantMove == null || cantMove.isEmpty()) {
             cantMove = "&cYou can't carry your weight anymore, you're going to need to drop some items!";
         }
@@ -98,7 +107,10 @@ public class LanguageConfig {
 
         messages = new MessagesModel(noPermission, invalidCommand, invalidMaterial, itemWeight,
                 weight, speed, reloadCommand, helpMessage, cantMove, overlimit, overWeight, slowdownWarning,
-                preventJumpWarning, levelInfo, levelSet, levelAdd, levelingDisabledMessage, invalidPlayer);
+                preventJumpWarning, levelInfo, levelSet, levelAdd, levelingDisabledMessage, invalidPlayer,
+                actionBarItemWeight, chatItemWeight, titleItemWeightTitle, titleItemWeightSubtitle,
+                subtitleItemWeightTitle, subtitleItemWeightSubtitle, scoreboardItemWeightTitle,
+                scoreboardItemWeightLine, bossBarItemWeight);
         config = this;
     }
 }

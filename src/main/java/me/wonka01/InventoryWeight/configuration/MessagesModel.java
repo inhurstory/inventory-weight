@@ -20,13 +20,25 @@ public class MessagesModel {
     private String levelAdd;
     private String levelingDisabledMessage;
     private String invalidPlayer;
+    private String actionBarItemWeight;
+    private String chatItemWeight;
+    private String titleItemWeightTitle;
+    private String titleItemWeightSubtitle;
+    private String subtitleItemWeightTitle;
+    private String subtitleItemWeightSubtitle;
+    private String scoreboardItemWeightTitle;
+    private String scoreboardItemWeightLine;
+    private String bossBarItemWeight;
 
     // TODO - make this a map instead of an object
     public MessagesModel(String noPermission, String invalidCommand, String invalidMaterial, String itemWeight,
             String weight, String speed, String reloadCommand, String helpMessage, String cantMoveMessage,
             String overLimitMessage, String overWeightMessage, String slowdownWarningMessage,
             String preventJumpWarningMessage, String levelInfo, String levelSet, String levelAdd,
-            String levelingDisabledMessage, String invalidPlayer) {
+            String levelingDisabledMessage, String invalidPlayer, String actionBarItemWeight, String chatItemWeight,
+            String titleItemWeightTitle, String titleItemWeightSubtitle, String subtitleItemWeightTitle,
+            String subtitleItemWeightSubtitle, String scoreboardItemWeightTitle, String scoreboardItemWeightLine,
+            String bossBarItemWeight) {
         this.noPermission = noPermission;
         this.invalidCommand = invalidCommand;
         this.invalidMaterial = invalidMaterial;
@@ -45,6 +57,15 @@ public class MessagesModel {
         this.levelAdd = levelAdd;
         this.levelingDisabledMessage = levelingDisabledMessage;
         this.invalidPlayer = invalidPlayer;
+        this.actionBarItemWeight = actionBarItemWeight;
+        this.chatItemWeight = chatItemWeight;
+        this.titleItemWeightTitle = titleItemWeightTitle;
+        this.titleItemWeightSubtitle = titleItemWeightSubtitle;
+        this.subtitleItemWeightTitle = subtitleItemWeightTitle;
+        this.subtitleItemWeightSubtitle = subtitleItemWeightSubtitle;
+        this.scoreboardItemWeightTitle = scoreboardItemWeightTitle;
+        this.scoreboardItemWeightLine = scoreboardItemWeightLine;
+        this.bossBarItemWeight = bossBarItemWeight;
     }
 
     public String getNoPermission() {
@@ -117,5 +138,41 @@ public class MessagesModel {
 
     public String getInvalidPlayer() {
         return invalidPlayer;
+    }
+
+    public String getActionBarItemWeight() {
+        return actionBarItemWeight;
+    }
+
+    public String getChatItemWeight() {
+        return chatItemWeight;
+    }
+
+    public String getTitleItemWeightTitle() {
+        return titleItemWeightTitle;
+    }
+
+    public String getTitleItemWeightSubtitle() {
+        return titleItemWeightSubtitle;
+    }
+
+    public String getSubtitleItemWeightTitle() {
+        return subtitleItemWeightTitle;
+    }
+
+    public String getSubtitleItemWeightSubtitle() {
+        return subtitleItemWeightSubtitle;
+    }
+
+    public String getScoreboardItemWeightTitle() {
+        return scoreboardItemWeightTitle;
+    }
+
+    public String getScoreboardItemWeightLine() {
+        return scoreboardItemWeightLine;
+    }
+
+    public String getBossBarItemWeight() {
+        return bossBarItemWeight;
     }
 }

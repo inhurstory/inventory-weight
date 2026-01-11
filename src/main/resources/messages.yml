@@ -1,32 +1,41 @@
-noPermission: '&cYou do not have permission to perform this action!'
-invalidCommand: '&cInvalid command: use /iw help for a list of commands'
-invalidMaterial: '&cThe given material could not be found'
+noPermission: '&c你沒有權限執行此操作！'
+invalidCommand: '&c無效指令：請使用 /iw help 查看指令列表'
+invalidMaterial: '&c找不到指定的材質'
 # The weight is added to the end
-itemWeight: '&eItem weight is'
+itemWeight: '&e物品負擔值為'
 # The following strings are used when a player checks their weight
-weight: '&eWeight'
-speed: '&eSpeed'
-reloadCommand: '&AThe configuration has been reloaded successfully!'
-cantMoveMessage: "&cYou can't carry your weight anymore, you're going to need to drop some items!"
-overWeightMessage: "&cYou're carrying too much weight, you're going to need to drop some items!"
-slowdownWarningMessage: "&eYou're starting to feel your pack weighing you down."
-preventJumpWarningMessage: "&cYou are too heavy to jump!"
+weight: '&e負擔值'
+speed: '&e速度'
+actionBarItemWeight: '&e物品負擔值：&a%weight%'
+chatItemWeight: '&e物品負擔值：&a%weight%'
+titleItemWeightTitle: '&e物品負擔值'
+titleItemWeightSubtitle: '&a%weight%'
+subtitleItemWeightTitle: ''
+subtitleItemWeightSubtitle: '&e物品負擔值：&a%weight%'
+scoreboardItemWeightTitle: '&e物品負擔值'
+scoreboardItemWeightLine: '&a%weight%'
+bossBarItemWeight: '&e物品負擔值：&a%weight%'
+reloadCommand: '&A已成功重新載入設定檔！'
+cantMoveMessage: "&c你被壓垮在地上，必須先丟掉一些物品！"
+overWeightMessage: "&c你攜帶過重，必須先丟掉一些物品！"
+slowdownWarningMessage: "&e你開始感覺背包變重，移動速度正在下降。"
+preventJumpWarningMessage: "&c你感受非常沉重，導致無法跳躍！"
 helpMessage:
-  "&eWelcome to the Inventory Weight Plugin! This plugin tracks the weight of items in your inventory and adjusts your movement speed based on the total weight you're carrying.
-  You can customize item weights, set limits, and much more. Here are some useful commands to get started:
+  "&e歡迎使用 Inventory Weight 插件！本插件會追蹤你背包物品負擔值，並依照總負擔值調整移動速度。
+  你可以自訂物品負擔值、設定數量上限等。以下是一些常用指令：
 
-  &7- &a/iw weight &f- Check your current inventory weight and speed.
-  &7- &a/iw get &f- See the weight of the item you're holding.
-  &7- &a/iw get [Material Name] &f- Check the default weight of a specific material.
-  &7- &a/iw level &f- Check your leveling bonus to max weight.
-  &7- &a/iw level set <player> <level> &f- Set a player's level (admin).
-  &7- &a/iw level add <player> <delta> &f- Add to a player's level (admin).
-  &7- &a/iw reload &f- Reload the plugin configuration.
+  &7- &a/iw weight &f- 查看目前背包負擔值與速度。
+  &7- &a/iw get &f- 查看手上物品的負擔值。
+  &7- &a/iw get [Material Name] &f- 查看指定材質的預設負擔值。
+  &7- &a/iw level &f- 查看等級帶來的最大負擔值加成。
+  &7- &a/iw level set <player> <level> &f- 設定玩家等級（管理員）。
+  &7- &a/iw level add <player> <delta> &f- 調整玩家等級增減（管理員）。
+  &7- &a/iw reload &f- 重新載入插件設定。
 
-  &eManage your inventory wisely to avoid slowing down or being unable to move!"
-overLimitMessage: '&cYou are carrying too much, you need to drop something!'
-levelInfo: '&eLevel: &a%level% &7| &eMultiplier: &a%multiplier% &7| &eMax Weight: &a%max%'
-levelSet: '&aSet %player%''s level to %level%.'
-levelAdd: '&aAdjusted %player%''s level. New level: %level%.'
-levelingDisabledMessage: '&cLeveling system is disabled.'
-invalidPlayer: '&cThat player could not be found.'
+  &e善用背包空間，避免被減速或無法移動！"
+overLimitMessage: '&c你攜帶過多，請先丟掉一些東西！'
+levelInfo: '&e等級：&a%level% &7| &e倍率：&a%multiplier% &7| &e最大負擔值：&a%max%'
+levelSet: '&a已將 %player% 的等級設為 %level%。'
+levelAdd: '&a已調整 %player% 的等級，現在等級：%level%。'
+levelingDisabledMessage: '&c等級系統已停用。'
+invalidPlayer: '&c找不到該玩家。'

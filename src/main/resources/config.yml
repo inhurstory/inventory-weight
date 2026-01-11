@@ -28,6 +28,12 @@ beginSlowdown: 0.7
 # A lower number results in more frequent updates
 checkInventoryTime: 2
 
+# Hotbar item weight preview (no command needed)
+itemWeightPreview:
+  enabled: true
+  # actionbar, chat, title, subtitle, scoreboard, bossbar, off
+  mode: actionbar
+
 # Include names of the worlds you would like to be affected by the plugin.
 # if you would like it to affect every world then leave this empty
 worlds:

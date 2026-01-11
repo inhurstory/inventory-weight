@@ -4,7 +4,9 @@ import me.wonka01.InventoryWeight.commands.InventoryWeightCommands;
 import me.wonka01.InventoryWeight.configuration.LanguageConfig;
 import me.wonka01.InventoryWeight.events.FreezePlayerEvent;
 import me.wonka01.InventoryWeight.events.JoinEvent;
+import me.wonka01.InventoryWeight.events.ItemWeightPreviewListener;
 import me.wonka01.InventoryWeight.events.PreventJumpEvent;
+import me.wonka01.InventoryWeight.events.ItemWeightDisplayMode;
 import me.wonka01.InventoryWeight.playerweight.LevelScalingStrategy;
 import me.wonka01.InventoryWeight.playerweight.ItemLimit;
 import me.wonka01.InventoryWeight.playerweight.PlayerLevelManager;
@@ -15,6 +17,8 @@ import me.wonka01.InventoryWeight.util.InventoryWeightExpansion;
 import me.wonka01.InventoryWeight.util.WorldList;
 import org.bukkit.Bukkit;
 import org.bukkit.Server;
+import org.bukkit.boss.BarColor;
+import org.bukkit.boss.BarStyle;
 import org.bukkit.command.PluginCommand;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.Inventory;
@@ -36,6 +40,15 @@ public class InventoryWeight extends JavaPlugin {
     private InventoryWeightCommands commands;
     private LanguageConfig languageConfig;
     private PlayerLevelManager levelManager;
+    private boolean itemWeightPreviewEnabled;
+    private ItemWeightDisplayMode itemWeightPreviewMode;
+    private static final int TITLE_FADE_IN = 5;
+    private static final int TITLE_STAY = 40;
+    private static final int TITLE_FADE_OUT = 10;
+    private static final int SCOREBOARD_DURATION_TICKS = 100;
+    private static final int BOSSBAR_DURATION_TICKS = 60;
+    private static final BarColor BOSSBAR_COLOR = BarColor.GREEN;
+    private static final BarStyle BOSSBAR_STYLE = BarStyle.SOLID;
 
     @Override
     public void onEnable() {
@@ -219,6 +232,8 @@ public class InventoryWeight extends JavaPlugin {
 
         List<String> worlds = getConfig().getStringList("worlds");
         WorldList.initializeWorldList(worlds);
+
+        loadItemWeightPreviewConfig();
     }
 
     private double getDoubleFromConfigValue(Object weight) {
@@ -234,6 +249,7 @@ public class InventoryWeight extends JavaPlugin {
         getServer().getPluginManager().registerEvents(new JoinEvent(), this);
         getServer().getPluginManager().registerEvents(new FreezePlayerEvent(), this);
         getServer().getPluginManager().registerEvents(new PreventJumpEvent(), this);
+        getServer().getPluginManager().registerEvents(new ItemWeightPreviewListener(this), this);
     }
 
     private void setUpMessageConfig() {
@@ -251,6 +267,12 @@ public class InventoryWeight extends JavaPlugin {
         LevelScalingStrategy strategy = LevelScalingStrategy.fromConfig(getConfig());
         levelManager = new PlayerLevelManager(this);
         levelManager.configure(enabled, defaultLevel, maxLevel, strategy);
+    }
+
+    private void loadItemWeightPreviewConfig() {
+        itemWeightPreviewEnabled = getConfig().getBoolean("itemWeightPreview.enabled", true);
+        String mode = getConfig().getString("itemWeightPreview.mode", "actionbar");
+        itemWeightPreviewMode = ItemWeightDisplayMode.fromConfig(mode);
     }
 
     public void reloadConfiguration() {
@@ -277,5 +299,41 @@ public class InventoryWeight extends JavaPlugin {
             return fromPerm;
         }
         return getConfig().getInt("weightLimit");
+    }
+
+    public boolean isItemWeightPreviewEnabled() {
+        return itemWeightPreviewEnabled;
+    }
+
+    public ItemWeightDisplayMode getItemWeightPreviewMode() {
+        return itemWeightPreviewMode;
+    }
+
+    public int getBossBarDurationTicks() {
+        return BOSSBAR_DURATION_TICKS;
+    }
+
+    public BarColor getBossBarColor() {
+        return BOSSBAR_COLOR;
+    }
+
+    public BarStyle getBossBarStyle() {
+        return BOSSBAR_STYLE;
+    }
+
+    public int getTitleFadeIn() {
+        return TITLE_FADE_IN;
+    }
+
+    public int getTitleStay() {
+        return TITLE_STAY;
+    }
+
+    public int getTitleFadeOut() {
+        return TITLE_FADE_OUT;
+    }
+
+    public int getScoreboardDurationTicks() {
+        return SCOREBOARD_DURATION_TICKS;
     }
 }
