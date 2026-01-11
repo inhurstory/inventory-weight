@@ -31,6 +31,7 @@ public class InventoryWeightCommands implements CommandExecutor, TabCompleter {
         subCommands.put("reload", new ReloadCommand());
         subCommands.put("level", new LevelCommand());
         subCommands.put("preview", new PreviewCommand());
+        subCommands.put("tempforce", new TempForceCommand());
     }
 
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
@@ -60,17 +61,34 @@ public class InventoryWeightCommands implements CommandExecutor, TabCompleter {
                     completions.add(sub);
                 }
             }
-        } else if (args.length == 2 && "level".equalsIgnoreCase(args[0])) {
-            if ("set".startsWith(args[1].toLowerCase())) {
-                completions.add("set");
+        } else if (args.length == 2) {
+            if ("level".equalsIgnoreCase(args[0])) {
+                if ("set".startsWith(args[1].toLowerCase())) {
+                    completions.add("set");
+                }
+                if ("add".startsWith(args[1].toLowerCase())) {
+                    completions.add("add");
+                }
+            } else if ("tempforce".equalsIgnoreCase(args[0])) {
+                if ("on".startsWith(args[1].toLowerCase())) {
+                    completions.add("on");
+                }
+                if ("off".startsWith(args[1].toLowerCase())) {
+                    completions.add("off");
+                }
             }
-            if ("add".startsWith(args[1].toLowerCase())) {
-                completions.add("add");
-            }
-        } else if (args.length == 3 && "level".equalsIgnoreCase(args[0])) {
-            for (Player online : Bukkit.getOnlinePlayers()) {
-                if (online.getName().toLowerCase().startsWith(args[2].toLowerCase())) {
-                    completions.add(online.getName());
+        } else if (args.length == 3) {
+            if ("level".equalsIgnoreCase(args[0])) {
+                for (Player online : Bukkit.getOnlinePlayers()) {
+                    if (online.getName().toLowerCase().startsWith(args[2].toLowerCase())) {
+                        completions.add(online.getName());
+                    }
+                }
+            } else if ("tempforce".equalsIgnoreCase(args[0])) {
+                for (Player online : Bukkit.getOnlinePlayers()) {
+                    if (online.getName().toLowerCase().startsWith(args[2].toLowerCase())) {
+                        completions.add(online.getName());
+                    }
                 }
             }
         }

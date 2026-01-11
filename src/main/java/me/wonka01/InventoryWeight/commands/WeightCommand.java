@@ -22,7 +22,7 @@ public class WeightCommand implements SubCommand {
         Player player = (Player) sender;
         WorldList worldList = WorldList.getInstance();
         if (player.hasPermission("inventoryweight.off") || player.getGameMode().equals(GameMode.CREATIVE)
-                || !(worldList.isInventoryWeightEnabled(player.getWorld().getName()))) {
+                || !(worldList.isInventoryWeightEnabled(player))) {
             player.sendMessage(ChatColor.translateAlternateColorCodes('&',
                     LanguageConfig.getConfig().getMessages().getNoPermission()));
             return;

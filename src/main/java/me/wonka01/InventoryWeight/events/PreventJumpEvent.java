@@ -22,7 +22,7 @@ public class PreventJumpEvent implements Listener {
             return;
         }
 
-        if (!WorldList.getInstance().isInventoryWeightEnabled(player.getWorld().getName())) {
+        if (!WorldList.getInstance().isInventoryWeightEnabled(player)) {
             return;
         }
 

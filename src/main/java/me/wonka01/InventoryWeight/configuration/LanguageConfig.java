@@ -71,6 +71,9 @@ public class LanguageConfig {
         String scoreboardItemWeightTitle = yamlConfiguration.getString("scoreboardItemWeightTitle");
         String scoreboardItemWeightLine = yamlConfiguration.getString("scoreboardItemWeightLine");
         String bossBarItemWeight = yamlConfiguration.getString("bossBarItemWeight");
+        String tempForceOn = yamlConfiguration.getString("tempForceOn");
+        String tempForceOff = yamlConfiguration.getString("tempForceOff");
+        String tempForceCleared = yamlConfiguration.getString("tempForceCleared");
         if (cantMove == null || cantMove.isEmpty()) {
             cantMove = "&cYou can't carry your weight anymore, you're going to need to drop some items!";
         }
@@ -104,13 +107,22 @@ public class LanguageConfig {
         if (invalidPlayer == null || invalidPlayer.isEmpty()) {
             invalidPlayer = "&cThat player could not be found.";
         }
+        if (tempForceOn == null || tempForceOn.isEmpty()) {
+            tempForceOn = "&aTemporarily forced weight system ON for %player% (ignoring world list).";
+        }
+        if (tempForceOff == null || tempForceOff.isEmpty()) {
+            tempForceOff = "&eTemporarily forced weight system OFF for %player% (ignoring world list).";
+        }
+        if (tempForceCleared == null || tempForceCleared.isEmpty()) {
+            tempForceCleared = "&7Cleared temporary weight override for %player%.";
+        }
 
         messages = new MessagesModel(noPermission, invalidCommand, invalidMaterial, itemWeight,
                 weight, speed, reloadCommand, helpMessage, cantMove, overlimit, overWeight, slowdownWarning,
                 preventJumpWarning, levelInfo, levelSet, levelAdd, levelingDisabledMessage, invalidPlayer,
                 actionBarItemWeight, chatItemWeight, titleItemWeightTitle, titleItemWeightSubtitle,
                 subtitleItemWeightTitle, subtitleItemWeightSubtitle, scoreboardItemWeightTitle,
-                scoreboardItemWeightLine, bossBarItemWeight);
+                scoreboardItemWeightLine, bossBarItemWeight, tempForceOn, tempForceOff, tempForceCleared);
         config = this;
     }
 }

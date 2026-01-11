@@ -10,7 +10,7 @@ commands:
   inventoryweight:
     aliases: iw
     description: Commands for Inventory Weight Plugin
-    usage: /iw [help, weight, get, level, preview] are the available commands
+    usage: /iw [help, weight, get, level, preview, tempforce] are the available commands
 
 permissions:
   inventoryweight.reload:
@@ -27,4 +27,7 @@ permissions:
     default: op
   inventoryweight.preview:
     description: Preview level multipliers and max weight from config
+    default: op
+  inventoryweight.tempforce:
+    description: Temporarily force enable/disable weight for a player ignoring world list
     default: op

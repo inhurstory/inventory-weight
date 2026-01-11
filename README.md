@@ -221,6 +221,8 @@ For more information or to download the plugin, visit the [plugin page](https://
 - Player levels are saved and persisted in the `player-levels.yml` file.
 - **`/iw level`**: Allows a player to check their current weight bonus.
 - **`/iw level set|add <player> <value>`**: Allows administrators to set or add to a player's level. This command includes tab completion for subcommands and online player names.
+- **`/iw tempforce on/off <player>`**: Admin override to temporarily force-enable or disable weight for a player; clears on logout/world change/gamemode change.
+- Permission: `inventoryweight.tempforce`.
 
 ## **New Placeholders**
 - PlaceholderAPI identifier shortened to `iw` (was `inventoryweight`). Use `%iw_*%` instead of `%inventoryweight_*%`.

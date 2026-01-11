@@ -29,6 +29,9 @@ public class MessagesModel {
     private String scoreboardItemWeightTitle;
     private String scoreboardItemWeightLine;
     private String bossBarItemWeight;
+    private String tempForceOn;
+    private String tempForceOff;
+    private String tempForceCleared;
 
     // TODO - make this a map instead of an object
     public MessagesModel(String noPermission, String invalidCommand, String invalidMaterial, String itemWeight,
@@ -38,7 +41,7 @@ public class MessagesModel {
             String levelingDisabledMessage, String invalidPlayer, String actionBarItemWeight, String chatItemWeight,
             String titleItemWeightTitle, String titleItemWeightSubtitle, String subtitleItemWeightTitle,
             String subtitleItemWeightSubtitle, String scoreboardItemWeightTitle, String scoreboardItemWeightLine,
-            String bossBarItemWeight) {
+            String bossBarItemWeight, String tempForceOn, String tempForceOff, String tempForceCleared) {
         this.noPermission = noPermission;
         this.invalidCommand = invalidCommand;
         this.invalidMaterial = invalidMaterial;
@@ -66,6 +69,9 @@ public class MessagesModel {
         this.scoreboardItemWeightTitle = scoreboardItemWeightTitle;
         this.scoreboardItemWeightLine = scoreboardItemWeightLine;
         this.bossBarItemWeight = bossBarItemWeight;
+        this.tempForceOn = tempForceOn;
+        this.tempForceOff = tempForceOff;
+        this.tempForceCleared = tempForceCleared;
     }
 
     public String getNoPermission() {
@@ -174,5 +180,17 @@ public class MessagesModel {
 
     public String getBossBarItemWeight() {
         return bossBarItemWeight;
+    }
+
+    public String getTempForceOn() {
+        return tempForceOn;
+    }
+
+    public String getTempForceOff() {
+        return tempForceOff;
+    }
+
+    public String getTempForceCleared() {
+        return tempForceCleared;
     }
 }

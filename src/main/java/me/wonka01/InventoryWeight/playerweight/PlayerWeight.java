@@ -183,7 +183,7 @@ public class PlayerWeight {
         } else if (player.getGameMode().equals(GameMode.CREATIVE)) {
             return true;
         } else {
-            return !(worldList.isInventoryWeightEnabled(player.getWorld().getName()));
+            return !(worldList.isInventoryWeightEnabled(player));
         }
     }
 

@@ -47,7 +47,7 @@ public class ItemWeightPreviewListener implements Listener {
             return;
         }
         Player player = event.getPlayer();
-        if (!WorldList.getInstance().isInventoryWeightEnabled(player.getWorld().getName())) {
+        if (!WorldList.getInstance().isInventoryWeightEnabled(player)) {
             return;
         }
         if (player.getGameMode() == GameMode.CREATIVE || player.hasPermission("inventoryweight.off")) {
