@@ -48,6 +48,14 @@ public class TempForceCommand implements SubCommand {
             sender.sendMessage(ChatColor.translateAlternateColorCodes('&',
                     LanguageConfig.getConfig().getMessages().getTempForceOff()
                             .replace("%player%", target.getName())));
+        } else if (action.equals("reset")) {
+            boolean cleared = worldList.clearTempForce(target.getUniqueId());
+            if (cleared) {
+                applyChange(target);
+            }
+            sender.sendMessage(ChatColor.translateAlternateColorCodes('&',
+                    LanguageConfig.getConfig().getMessages().getTempForceCleared()
+                            .replace("%player%", target.getName())));
         } else {
             sender.sendMessage(ChatColor.translateAlternateColorCodes('&',
                     LanguageConfig.getConfig().getMessages().getInvalidCommand()));

@@ -76,6 +76,9 @@ public class InventoryWeightCommands implements CommandExecutor, TabCompleter {
                 if ("off".startsWith(args[1].toLowerCase())) {
                     completions.add("off");
                 }
+                if ("reset".startsWith(args[1].toLowerCase())) {
+                    completions.add("reset");
+                }
             }
         } else if (args.length == 3) {
             if ("level".equalsIgnoreCase(args[0])) {
